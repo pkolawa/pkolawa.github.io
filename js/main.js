@@ -1,1 +1,1 @@
-console.log("It works!");
+console.dir(document.getElementById('contact'));
