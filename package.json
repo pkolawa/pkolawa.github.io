@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/pkolawa/pkolawa.github.io#readme",
   "devDependencies": {
+    "cheerio": "^0.22.0",
     "grunt": "^1.0.1",
     "grunt-contrib-uglify": "^2.3.0",
     "grunt-contrib-watch": "^1.0.0",

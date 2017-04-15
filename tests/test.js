@@ -1,12 +1,12 @@
 var fs = require('fs');
 var cheerio = require('cheerio');
 
-$ = cheerio.load(fs.readFileSync('index.html'));
+$ = cheerio.load(fs.readFileSync('./index.html'));
 
 describe("HTML title", function() {
 
   it("School Types", function() {
-    expect($('head title').innerHTML.length).toBeGreaterThanOrEqual(0);
+    expect($('head title').html().length).toBeGreaterThan(0);
   });
 
 });
