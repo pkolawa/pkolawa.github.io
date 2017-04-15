@@ -1,0 +1,25 @@
+{
+  "name": "pkolawa.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "jasmine tests/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkolawa/pkolawa.github.io.git"
+  },
+  "author": "Peter Kolawa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pkolawa/pkolawa.github.io/issues"
+  },
+  "homepage": "https://github.com/pkolawa/pkolawa.github.io#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-sass": "^2.0.0"
+  }
+}
