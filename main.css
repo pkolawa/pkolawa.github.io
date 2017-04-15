@@ -1,1 +1,1 @@
-body{background:#f90}
+body{background:#f0f0f0;font-family:'Verdana', Arial, sans-serif;font-size:14px;margin:0;padding:0}h1{font-weight:700;font-size:2rem}h2{font-weight:700;font-size:1.5rem}h3{font-weight:400;font-size:1.5rem}h4{font-weight:400;font-size:1.2rem}.size{width:90%;max-width:1200px;margin:0 auto}#intro,#services,#experience,#contact{position:absolute;top:0;left:0;width:100vw;height:100vh}#intro{background:#57c177;color:#fff;height:100vh;z-index:120}#services{z-index:115}#experience{z-index:110}#contact{z-index:105}

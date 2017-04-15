@@ -5,8 +5,8 @@ module.exports = function(grunt){
 	   pgk: grunt.file.readJSON('package.json'),
 	   uglify: {
 		   build : {
-			   src: 'src/js/*.js',
-			   dest: 'js/scripts.min.js',
+			   src: 'js/*.js',
+			   dest: 'main.js',
 		   },
 		   dev : {
 			   options : {
@@ -15,8 +15,8 @@ module.exports = function(grunt){
 				   compress: false,
 				   preserveComments: 'all'
 			   },
-			   src: 'src/js/*.js',
-			   dest: 'js/scripts.min.js'
+			   src: 'js/*.js',
+			   dest: 'main.js'
 		   }
 	   },
 	   watch : {
@@ -25,7 +25,7 @@ module.exports = function(grunt){
 			   tasks: ['uglify:dev']
 		   },
 		   css : {
-			   files: ['src/scss/**/*.scss'],
+			   files: ['scss/*.scss'],
 			   tasks: ['sass:dev']
 		   }
 	   },
