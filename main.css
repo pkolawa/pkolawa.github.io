@@ -26,7 +26,7 @@ h4, .h4 {
   font-size: 1.2rem;
 }
 
-.size {
+.wrapper {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
