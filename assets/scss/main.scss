@@ -4,11 +4,13 @@ $blue: #489cc8;
 $black: #252525;
 
 body{
-	background: $gray;
+	// background: $gray;
+
 	font-family: 'Verdana', Arial, sans-serif;
 	font-size: 14px;
 	margin: 0;
 	padding: 0;
+	background: #fff;
 }
 
 h1, .h1{
@@ -49,11 +51,9 @@ h4, .h4{
 @import "mixins";
 
 #intro, #services, #experience, #contact{
-	// position: absolute;
 	top: 0;
 	left: 0;
-	width: 100vw;
-	height: 100vh;
+	background: $gray;
 }
 
 #intro{
