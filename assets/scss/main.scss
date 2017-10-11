@@ -49,6 +49,15 @@ h4, .h4{
 .italics{
 	font-style: italic;
 }
+.underline{
+	text-decoration: underline;
+}
+
+:link,
+:active,
+:visited{
+	color: inherit;
+}
 
 @import "mixins";
 
@@ -121,12 +130,14 @@ h4, .h4{
 
 		.flex-item{
 			height: 92%;
-			flex-grow: 1;
+			flex: 1;
+			flex-wrap: nowrap;
 			text-align: center;
 			@include transition(0.5s, ease-in-out);
 
 			&:hover{
-				flex-grow: 2;
+				flex: 2;
+				// flex-grow: 2;
 				cursor: pointer;
 				@include transition(0.5s, ease-in-out);
 				transition-delay: 0.5s;
@@ -164,16 +175,35 @@ h4, .h4{
 				}
 			}
 			&.selected{
-				flex-grow: 8;
+				flex: 3;
 				@include transition(0.5s, ease-in-out);
+
+				.service_name{
+					// margin-top: 30%;
+					padding: 0 5%;
+				}
+				.service_description{
+					opacity: 1;
+					height: auto;
+					@include transition(0.5s, ease-in-out);
+				}
 			}
 
 			.service_name{
-				margin-top: 50%;
+				margin-top: 40vh;
 				font-family: Georgia, serif;
 				font-size: 2.5em;
 				font-weight: 700;
 				margin-bottom: 1em;
+			}
+			.service_description{
+				height: 0;
+				width: 80%;
+				max-width: 400px;
+				margin: 0 auto;
+				opacity: 0;
+				padding: 0 5%;
+				@include transition(0.5s, ease-in-out);
 			}
 		}
 	}
@@ -206,39 +236,92 @@ h4, .h4{
 	}
 }
 #activities{
-	.flex-container{
-		@extend .flex;
-		height: 80%;
-		margin: 0 auto;
+	.activity{
+		display: inline-block;
+		width: 48%;
+		margin: 0 0 20px;
 
-		.flex-item{
-			height: 92%;
+		.activity_sign{
+			display: inline-block;
+			width: 20%;
+			margin: 0 7%;
+			vertical-align: top;
+			-webkit-filter: grayscale(100%);
+		    filter: grayscale(100%);
+			@include transition(0.3s, ease-in-out);
 
-			.activity_sign{
-				display: flex;
-				flex-grow: 1;
+
+		}
+		.activity_description{
+			display: inline-block;
+			width: 60%;
+			vertical-align: top;
+
+			h4{
+				font-weight: 700;
+				font-size: 2em;
+				border-bottom: 1px solid rgba(0,0,0, 0.3);
+				font-family: Georgia, 'Times New Roman', serif;
+				padding-bottom: 10px;
+				margin: 0.7em 0;
+			}
+
+			p{
+
 			}
 		}
-		.section_title{
-			flex-grow: 1;
-			font-family: Georgia, 'Times New Roman', serif;
-			font-weight: 700;
-			background: $gray;
-			margin: 2% 1% 2%;
-			font-size: 4em;
-			text-align: center;
-		}
-		.section_content{
-			flex-grow: 5;
-			margin: 2% 2% 2% 1%;
+		&:hover{
+			.activity_sign{
+				-webkit-filter: grayscale(0%);
+				filter: grayscale(0%);
+				@include transition(0.3s, ease-in-out);
+			}
 		}
 	}
 }
 #contact{
-	z-index: 105;
+	background: linear-gradient(56deg, #36a859, #398ebb);
+	background-size: 400% 400%;
 
-	.wrapper{
-		background: $black;
-		color: #fff;
+	-webkit-animation: footerAnimation 10s ease infinite;
+	-moz-animation: footerAnimation 10s ease infinite;
+	animation: footerAnimation 10s ease infinite;
+
+	@-webkit-keyframes footerAnimation {
+	    0%{background-position:0% 87%}
+	    50%{background-position:100% 14%}
+	    100%{background-position:0% 87%}
 	}
+	@-moz-keyframes footerAnimation {
+	    0%{background-position:0% 87%}
+	    50%{background-position:100% 14%}
+	    100%{background-position:0% 87%}
+	}
+	@keyframes footerAnimation {
+	    0%{background-position:0% 87%}
+	    50%{background-position:100% 14%}
+	    100%{background-position:0% 87%}
+	}
+
+	.contact_list{
+		list-style: none;
+
+		.social_signs{
+			padding: 0;
+
+			li{
+				list-style: none;
+				display: inline-block;
+				width: 30px;
+				height: 30px;
+
+				img{
+					filter:brightness(1%);
+					width: 100%;
+					height: auto;
+				}
+			}
+		}
+	}
+
 }
