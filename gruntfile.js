@@ -32,7 +32,8 @@ module.exports = function(grunt){
 	   sass : {
 		   dev : {
 			   options : {
-				   outputStyle: 'expanded'
+				   outputStyle: 'expanded',
+                   sourceMap: true
 			   },
 			   files : {
 				   'assets/css/main.css' : 'assets/scss/main.scss'
@@ -40,7 +41,8 @@ module.exports = function(grunt){
 		   },
 		   build : {
 			   options: {
-				   outputStyle: 'compressed'
+				   outputStyle: 'compressed',
+                   sourceMap: true
 			   },
 			   files : {
 				   'assets/css/main.css' : 'assets/scss/main.scss'

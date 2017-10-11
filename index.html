@@ -29,8 +29,8 @@
 	<main>
 		<section class="section" id="intro">
 			<div class="overlay">
-				<div class="flex-container">
-					<img src="https://i.imgur.com/AoYO8Qk.png" alt="Peter Kolawa" />
+				<div class="wrapper">
+					<img src="https://i.imgur.com/AoYO8Qk.png" class="main_logo" alt="Peter Kolawa - logo" />
 					<h2>Consulting for creating <strong>cool web</strong> for your business</h2>
 				</div>
 			</div>
@@ -39,25 +39,25 @@
 					<source type="video/mp4" src="./assets/vid/652266352.mp4">
 					<img src="./assets/vid/652266352.jpg" alt="" style="width: 0px; height: 0px;">
 				</video> -->
-				<video loop="loop" autoplay>
+				<!-- <video loop="loop" autoplay>
 					<source src="./assets/vid/652266352.mp4" type="video/mp4">
-					<!-- <source src="movie.ogg" type="video/ogg"> -->
+					<source src="./assets/vid/652266352.ogg" type="video/ogg">
 					Your browser does not support the video tag.
-				</video>
+				</video> -->
 			</div>
 		</section>
 		<section class="section" id="services">
 			<div class="flex-container">
 				<div class="flex-item">
-					<h2 class="italics">web</h2>
+					<h2 class="service_name italics">web</h2>
 					<p>Lorem ipsum dolor sit amet...</p>
 				</div>
 				<div class="flex-item">
-					<h2 class="italics">digital consulting</h2>
+					<h2 class="service_name italics">digital consulting</h2>
 					<p>Lorem ipsum dolor sit amet...</p>
 				</div>
 				<div class="flex-item">
-					<h2 class="italics">IoT</h2>
+					<h2 class="service_name italics">IoT</h2>
 					<p>Lorem ipsum dolor sit amet...</p>
 				</div>
 			</div>
@@ -67,7 +67,7 @@
 				<p class="year h3">2013</p>
 				<p class="subtitle">The beginning era</p>
 				<p class="year_description">
-					While I was studying chemistry @ Jagiellonian University I've realised that after graduation the only thing I can do is to teach children or produce cocaine.<br>
+					While I was studying chemistry at Jagiellonian University I've realised that after graduation the only thing I can do is to teach children or produce cocaine.<br>
 					So I've decided to do something different...
 				</p>
 			</div>
@@ -79,7 +79,7 @@
 			<div class="slide" id="year_2015">
 				<p class="year h3">2015-2016</p>
 				<p class="subtitle">Content publishing era</p>
-				<p class="year_description">In January I started work for Onet - <br>biggest online content publishing company in Poland. </p>
+				<p class="year_description">In January I started work for Onet - <br>biggest online content publishing company in Poland. <br>And through next 2 year I've been working in "Mission Impossible Team",<br> creating solutions for Onet's business Partners.</p>
 			</div>
 			<div class="slide" id="year_2016">
 				<p class="year h3">2017</p>
@@ -96,15 +96,28 @@
 			</div>
 		</section>
 		<section class="section" id="activities">
-			<div class="container">
-
+			<div class="flex-container">
+				<div class="section_title flex-item">
+					<p>Activites</p>
+				</div>
+				<div class="section_content flex-item">
+					<div class="activity_sign">
+						<img src="https://i.imgur.com/WCmwgG0.png" alt="Peter Kolawa - StackOverflow"/>
+					</div>
+					<div class="activity_sign">
+						<img src="https://i.imgur.com/utHENJJ.png" alt="Peter Kolawa - GitHub"/>
+					</div>
+					<div class="activity_sign">
+						<img src="https://i.imgur.com/6dojJkL.png" alt="Peter Kolawa - LinkedIn"/>
+					</div>
+				</div>
 			</div>
 			<!-- Sekcja z informacjami o wszelkiego rodzaju działalnościach:
 		GitHub, artykuły na LinkedInie, projekty etc. -->
 		</section>
 		<section class="section" id="contact">
 			<div class="container">
-				<img src="https://i.imgur.com/AoYO8Qk.png"/>
+				<img src="https://i.imgur.com/HyQU3KJ.png" alt="Peter Kolawa - logo"/>
 				<p class="contact_info">
 					<p class="h1">Peter Kolawa</p>
 					<ul class="no_marks">
@@ -129,6 +142,30 @@
 			$('#intro').on('click', function(){
 				$.fn.fullpage.moveSectionDown();
 				$.fn.fullpage.setAllowScrolling(true);
+			});
+
+			var movementStrength = 25;
+			var height = movementStrength / $(window).height();
+			var width = movementStrength / $(window).width();
+			$("#intro").mousemove(function(e){
+				var pageX = e.pageX - ($(window).width() / 2);
+				var pageY = e.pageY - ($(window).height() / 2);
+				var newvalueX = width * pageX * -1 - 25;
+				var newvalueY = height * pageY * -1 - 50;
+				$('#intro').css("background-position", newvalueX+"px "+newvalueY+"px");
+
+				var newDiagonal = parseInt((e.pageX / $(window).width() ) * 180) + 90;
+				var newPercent = parseInt((e.pageY / $(window).height()) * 100) + 50;
+				$('.overlay').css("background", "linear-gradient("+newDiagonal+"deg, rgba(72,156,200,0) 0%,rgba(72,156,200,0.6) "+newPercent+"%,rgba(72,156,200,1) 100%)");
+			});
+
+			$('#services .flex-item').on('click', function(){
+				if($(this).hasClass('selected')){
+					$(this).removeClass('selected');
+				}else{
+					$('#services .flex-item.selected').removeClass('selected');
+					$(this).toggleClass('selected');
+				}
 			});
 		});
 	</script>
