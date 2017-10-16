@@ -11,7 +11,7 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-56RL8F7');</script>
 	<!-- End Google Tag Manager -->
-
+	<link rel="icon" type="img/ico" href="./favicon.ico">
 	<link href="./assets/css/main.css" rel="stylesheet" type="text/css"/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="./assets/js/main.js" type="text/javascript"></script>
@@ -72,9 +72,9 @@
 			</div>
 		</section>
 		<section class="section" id="experience">
-
 			<div class="slide">
-				<p class="year h3">...</p>
+				<p class="year h3">
+					<img src="https://i.imgur.com/lSNscuV.png" class="sectionSignet" alt="Peter Kolawa - logo"/></p>
 				<p class="subtitle">The Timeline</p>
 				<p class="year_description">
 					See how it all started... How I became developer <strong>doing the things I love</strong>.
@@ -114,9 +114,11 @@
 			</div>
 		</section>
 		<section class="section" id="activities">
+			<img src="https://i.imgur.com/lSNscuV.png" class="sectionSignet" alt="Peter Kolawa - logo"/>
+			<p class="h2 sectionTitle">Find me one on...</p>
 			<div class="wrapper">
 				<div class="activity">
-					<a href="#" target="_blank" title="StackOverflow - Peter Kolawa">
+					<a href="https://stackoverflow.com/users/6103808/pkolawa" target="_blank" title="StackOverflow - Peter Kolawa">
 						<img src="https://i.imgur.com/WCmwgG0.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/>
 						<div class="activity_description">
 							<h4>StackOverflow Q&A</h4>
@@ -125,7 +127,7 @@
 					</a>
 				</div>
 				<div class="activity">
-					<a href="#" target="_blank" title="GitHub - Peter Kolawa">
+					<a href="https://github.com/pkolawa" target="_blank" title="GitHub - Peter Kolawa">
 						<img src="https://i.imgur.com/utHENJJ.png" class="activity_sign" alt="Peter Kolawa - GitHub"/>
 						<div class="activity_description">
 							<h4>GitHub repos</h4>
@@ -134,7 +136,7 @@
 					</a>
 				</div>
 				<div class="activity">
-					<a href="#" target="_blank" title="Piotr Kolawa - LinkedIn">
+					<a href="https://www.linkedin.com/in/pkolawa/" target="_blank" title="Piotr Kolawa - LinkedIn">
 						<img src="https://i.imgur.com/6dojJkL.png" class="activity_sign" alt="Peter Kolawa - LinkedIn"/>
 						<div class="activity_description">
 							<h4>LinkedIn articles</h4>
@@ -156,8 +158,9 @@
 		GitHub, artykuły na LinkedInie, projekty etc. -->
 		</section>
 		<section class="section" id="contact">
+			<img src="https://i.imgur.com/z03nHDn.png" class="sectionSignet" alt="Peter Kolawa - logo"/>
+			<p class="h2 sectionTitle">Contact</p>
 			<div class="container">
-				<img src="https://i.imgur.com/HyQU3KJ.png" alt="Peter Kolawa - logo"/>
 				<p class="contact_info">
 					<ul class="contact_list">
 						<li>+48 537 755 000</li>
@@ -165,10 +168,10 @@
 						<li><a href="http://pkolawa.pl" target="_blank">www.pkolawa.pl</a></li>
 						<li>
 							<ul class="social_signs">
-								<li><img src="https://i.imgur.com/WCmwgG0.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li>
-								<li><img src="https://i.imgur.com/6dojJkL.png" class="activity_sign" alt="Peter Kolawa - LinkedIn"/></li>
-								<li><img src="https://i.imgur.com/utHENJJ.png" class="activity_sign" alt="Peter Kolawa - GitHub"/></li>
-								<li><img src="https://i.imgur.com/dCuY38u.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li>
+								<a href="https://stackoverflow.com/users/6103808/pkolawa" target="_blank" title="Peter Kolawa - StackOverflow account"><li><img src="https://i.imgur.com/WCmwgG0.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li></a>
+								<a href="https://www.linkedin.com/in/pkolawa/" target="_blank" title="Peter Kolawa - LinkedIn profile"><li><img src="https://i.imgur.com/6dojJkL.png" class="activity_sign" alt="Peter Kolawa - LinkedIn"/></li></a>
+								<a href="https://github.com/pkolawa" target="_blank" title="Peter Kolawa - GitHub repos"><li><img src="https://i.imgur.com/utHENJJ.png" class="activity_sign" alt="Peter Kolawa - GitHub"/></li></a>
+								<a href="#" target="_blank" title="Peter Kolawa - YouTube channel (Coming soon)"><li><img src="https://i.imgur.com/dCuY38u.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li></a>
 							</ul>
 						</li>
 					</ul>
@@ -178,6 +181,7 @@
 	</main>
 	<script type="text/javascript">
 		$(document).ready(function() {
+			// Initialize fullpage.js
 			$('main').fullpage();
 			$.fn.fullpage.setAllowScrolling(false);
 

@@ -53,6 +53,16 @@ h4, .h4{
 	text-decoration: underline;
 }
 
+.sectionTitle{
+	text-align: center;
+	font-size: 4em;
+	margin-top: 0;
+}
+.sectionSignet{
+	display: block;
+	margin: 0 auto;
+}
+
 :link,
 :active,
 :visited{
@@ -74,6 +84,10 @@ h4, .h4{
 	color: #fff;
 	height: 100vh;
 	z-index: 120;
+
+	:hover{
+		cursor: pointer;
+	}
 
 	h2{
 		text-align: center;
@@ -145,32 +159,38 @@ h4, .h4{
 			&:nth-of-type(1){
 				margin: 2% 1% 2% 2%;
 				color: #fff;
-				background: $green;
+				background: url('../img/pattern/1_g.jpg') top center repeat;
+				background-color: $green;
 				@include transition(0.5s, ease-in-out);
 
 				&.selected{
 					background: url('../img/7.jpg') top center no-repeat;
+					background-color: $green;
 					@include transition(0.5s, ease-in-out);
 				}
 			}
 			&:nth-of-type(2){
 				margin: 2% 1%;
-				background: $gray;
+				background: url('../img/pattern/4.png') top center repeat;
+				background-color: $gray;
 				@include transition(0.5s, ease-in-out);
 
 				&.selected{
 					background: url('../img/8.jpg') top center no-repeat;
+					background-color: $gray;
 					@include transition(0.5s, ease-in-out);
 				}
 			}
 			&:nth-of-type(3){
 				margin: 2% 2% 2% 1%;
 				color: #fff;
-				background: $blue;
+				background: url('../img/pattern/2_b.jpg') top center repeat;
+				background-color: $blue;
 				@include transition(0.5s, ease-in-out);
 
 				&.selected{
 					background: url('../img/6.jpg') top center no-repeat;
+					background-color: $blue;
 					@include transition(0.5s, ease-in-out);
 				}
 			}
@@ -211,6 +231,21 @@ h4, .h4{
 #experience{
 	z-index: 110;
 
+	.sectionSignet{
+		// position: absolute;
+		// top: 40px;
+		// left: 40px;
+		opacity: 0.3;
+		width: 80px;
+		height: 80px;
+		@include transition(0.3s, ease-in-out);
+	}
+
+	&:hover .sectionSignet{
+		opacity: 1;
+		@include transition(0.3s, ease-in-out);
+	}
+
 	.slide{
 		text-align: center;
 
@@ -236,6 +271,21 @@ h4, .h4{
 	}
 }
 #activities{
+	.sectionSignet{
+		position: absolute;
+		top: 40px;
+		left: 40px;
+		opacity: 0.1;
+		width: 80px;
+		height: 80px;
+		@include transition(0.3s, ease-in-out);
+	}
+
+	.sectionTitle{
+		@extend .sectionTitle;
+		font-size: 3em;
+		color: rgba(0,0,0, 0.5);
+	}
 	.activity{
 		display: inline-block;
 		width: 48%;
@@ -246,8 +296,8 @@ h4, .h4{
 			width: 20%;
 			margin: 0 7%;
 			vertical-align: top;
-			-webkit-filter: grayscale(100%);
-		    filter: grayscale(100%);
+			-webkit-filter: grayscale(60%);
+		    filter: grayscale(60%);
 			@include transition(0.3s, ease-in-out);
 
 
@@ -259,7 +309,7 @@ h4, .h4{
 
 			h4{
 				font-weight: 700;
-				font-size: 2em;
+				font-size: 1.5em;
 				border-bottom: 1px solid rgba(0,0,0, 0.3);
 				font-family: Georgia, 'Times New Roman', serif;
 				padding-bottom: 10px;
@@ -280,43 +330,55 @@ h4, .h4{
 	}
 }
 #contact{
-	background: linear-gradient(56deg, #36a859, #398ebb);
+	background: linear-gradient(181deg, $green, $blue);
 	background-size: 400% 400%;
 
-	-webkit-animation: footerAnimation 10s ease infinite;
-	-moz-animation: footerAnimation 10s ease infinite;
-	animation: footerAnimation 10s ease infinite;
+	-webkit-animation: ContactAnimation 10s ease infinite;
+	-moz-animation: ContactAnimation 10s ease infinite;
+	animation: ContactAnimation 10s ease infinite;
 
-	@-webkit-keyframes footerAnimation {
-	    0%{background-position:0% 87%}
-	    50%{background-position:100% 14%}
-	    100%{background-position:0% 87%}
+	@-webkit-keyframes ContactAnimation {
+	    0%{background-position:50% 0%}
+	    50%{background-position:51% 100%}
+	    100%{background-position:50% 0%}
 	}
-	@-moz-keyframes footerAnimation {
-	    0%{background-position:0% 87%}
-	    50%{background-position:100% 14%}
-	    100%{background-position:0% 87%}
+	@-moz-keyframes ContactAnimation {
+	    0%{background-position:50% 0%}
+	    50%{background-position:51% 100%}
+	    100%{background-position:50% 0%}
 	}
-	@keyframes footerAnimation {
-	    0%{background-position:0% 87%}
-	    50%{background-position:100% 14%}
-	    100%{background-position:0% 87%}
+	@keyframes ContactAnimation {
+	    0%{background-position:50% 0%}
+	    50%{background-position:51% 100%}
+	    100%{background-position:50% 0%}
+	}
+
+	.sectionTitle{
+		@extend .sectionTitle;
+		color: rgba(255,255,255, 1);
 	}
 
 	.contact_list{
+		text-align: center;
+		color: #fff;
+		margin: 0 auto;
 		list-style: none;
+		padding: 0;
+		font-size: 1.3em;
 
 		.social_signs{
 			padding: 0;
+			margin-top: 40px;
 
 			li{
 				list-style: none;
 				display: inline-block;
-				width: 30px;
-				height: 30px;
+				width: 50px;
+				height: 50px;
+				margin: 0 10px;
 
 				img{
-					filter:brightness(1%);
+					filter: brightness(1%) invert(100%);
 					width: 100%;
 					height: auto;
 				}
