@@ -183,12 +183,15 @@
 		$(document).ready(function() {
 			// Initialize fullpage.js
 			$('main').fullpage();
-			$.fn.fullpage.setAllowScrolling(false);
 
-			$('#intro').on('click', function(){
-				$.fn.fullpage.moveSectionDown();
-				$.fn.fullpage.setAllowScrolling(true);
-			});
+			if(window.width <= 1024){
+				$.fn.fullpage.setAllowScrolling(false);
+
+				$('#intro').on('click', function(){
+					$.fn.fullpage.moveSectionDown();
+					$.fn.fullpage.setAllowScrolling(true);
+				});
+			}
 
 			var movementStrength = 25;
 			var height = movementStrength / $(window).height();
