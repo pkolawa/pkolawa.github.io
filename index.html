@@ -163,15 +163,14 @@
 			<div class="container">
 				<p class="contact_info">
 					<ul class="contact_list">
-						<li>+48 537 755 000</li>
-						<li><!-- e-mail --></li>
-						<li><a href="http://pkolawa.pl" target="_blank">www.pkolawa.pl</a></li>
+						<li>PAKK</li>
+						<li data-contact="email">Grab my e-mail</li>
 						<li>
 							<ul class="social_signs">
 								<a href="https://stackoverflow.com/users/6103808/pkolawa" target="_blank" title="Peter Kolawa - StackOverflow account"><li><img src="https://i.imgur.com/WCmwgG0.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li></a>
 								<a href="https://www.linkedin.com/in/pkolawa/" target="_blank" title="Peter Kolawa - LinkedIn profile"><li><img src="https://i.imgur.com/6dojJkL.png" class="activity_sign" alt="Peter Kolawa - LinkedIn"/></li></a>
 								<a href="https://github.com/pkolawa" target="_blank" title="Peter Kolawa - GitHub repos"><li><img src="https://i.imgur.com/utHENJJ.png" class="activity_sign" alt="Peter Kolawa - GitHub"/></li></a>
-								<a href="#" target="_blank" title="Peter Kolawa - YouTube channel (Coming soon)"><li><img src="https://i.imgur.com/dCuY38u.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li></a>
+								<!-- <a href="#" target="_blank" title="Peter Kolawa - YouTube channel (Coming soon)"><li><img src="https://i.imgur.com/dCuY38u.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li></a> -->
 							</ul>
 						</li>
 					</ul>
@@ -213,6 +212,10 @@
 					$('#services .flex-item.selected').removeClass('selected');
 					$(this).toggleClass('selected');
 				}
+			});
+
+			$('#contact li').on('click', function(){
+				$(this).attr("data-contact");
 			});
 		});
 	</script>
