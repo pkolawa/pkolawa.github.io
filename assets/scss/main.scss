@@ -3,6 +3,9 @@ $gray: #f0f0f0;
 $blue: #489cc8;
 $black: #252525;
 
+$cursiveFont: 'Reenie Beanie', cursive;
+$serifFont: Georgia, 'Times New Roman', serif;
+
 body{
 	// background: $gray;
 
@@ -42,6 +45,7 @@ h4, .h4{
 	flex-wrap: wrap;
 	justify-content: space-between;
 	align-content: space-between;
+	align-items: center;
 	width: 100%;
 	height: 100%;
 }
@@ -71,6 +75,8 @@ h4, .h4{
 
 @import "mixins";
 
+@import url('https://fonts.googleapis.com/css?family=Reenie+Beanie');
+
 #intro, #services, #experience, #contact{
 	top: 0;
 	left: 0;
@@ -78,9 +84,11 @@ h4, .h4{
 }
 
 #intro{
-	background: url('https://i.imgur.com/fLIW6Ag.jpg') top center no-repeat;
-	background-size: calc(100% + 50px);
-	background-color: $blue;
+	background: url('https://i.imgur.com/cEESz1v.jpg') bottom center no-repeat;
+	background-attachment: fixed;
+	background-size: 120%;
+
+	background-color: $green;
 	color: #fff;
 	height: 100vh;
 	z-index: 120;
@@ -90,42 +98,44 @@ h4, .h4{
 	}
 
 	h2{
-		text-align: center;
 		font-weight: 400;
 		font-family: "Arial", serif;
-		font-weight: 700;
-		font-variant: small-caps;
+		// font-weight: 700;
+		// font-variant: small-caps;
 		padding-top: 10vh;
 		font-size: 2.4em;
 		letter-spacing: 0.03em;
 		text-shadow: 0 0 5px rgba(72,156,200, 0.4);
 	}
 	.main_logo{
-		display: block;
+		display: inline-block;
 		margin: 0 auto;
+		vertical-align: middle;
+		width: 30%;
+		margin: 0 10%;
 	}
 
 	.overlay{
-		position: fixed;
-		z-index: 2;
-		// background: rgba(87, 193, 119, 0.8);
-		background: -moz-linear-gradient(-45deg, rgba(87,193,119,0) 0%, rgba(72,156,200,0.3) 64%, rgba(72,156,200,1) 100%); /* FF3.6-15 */
-		background: -webkit-linear-gradient(-45deg, rgba(72,156,200,0) 0%,rgba(72,156,200,0.3) 64%,rgba(72,156,200,1) 100%); /* Chrome10-25,Safari5.1-6 */
-		background: linear-gradient(135deg, rgba(72,156,200,0) 0%,rgba(72,156,200,0.3) 64%,rgba(72,156,200,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0057c177', endColorstr='#57c177',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: 100%;
+		background: rgba(37,37,37, 0.4);
 
 		.wrapper{
 			@extend .wrapper;
-			height: 40%;
-			margin: 0 auto;
-			padding: 15% 0;
-			width: 100%;
-			max-width: 100%;
-			// background: rgba(0,0,0, 0.3);
+			width: 40vw;
+			// border: 2px solid #fff;
+			display: inline-block;
+			vertical-align: middle;
+
+			h2{
+				font-size: 5em;
+				font-family: $cursiveFont;
+
+				span{
+					font-size: 1.4em;
+				}
+			}
 		}
 
 	}
@@ -151,10 +161,12 @@ h4, .h4{
 		@extend .flex;
 
 		.flex-item{
-			height: 92%;
+			height: 45%;
 			flex: 1;
 			flex-wrap: nowrap;
 			text-align: center;
+			border: 2px solid #fff;
+			background: rgba(255,255,255, 0.2);
 			@include transition(0.5s, ease-in-out);
 
 			&:hover{
@@ -167,8 +179,8 @@ h4, .h4{
 			&:nth-of-type(1){
 				margin: 2% 1% 2% 2%;
 				color: #fff;
-				background: url('../img/pattern/1_g.jpg') top center repeat;
-				background-color: $green;
+				// background: url('../img/pattern/1_g.jpg') top center repeat;
+				// background-color: $green;
 				@include transition(0.5s, ease-in-out);
 
 				&.selected{
@@ -179,8 +191,9 @@ h4, .h4{
 			}
 			&:nth-of-type(2){
 				margin: 2% 1%;
-				background: url('../img/pattern/4.png') top center repeat;
-				background-color: $gray;
+				color: #fff;
+				// background: url('../img/pattern/4.png') top center repeat;
+				// background-color: $gray;
 				@include transition(0.5s, ease-in-out);
 
 				&.selected{
@@ -192,8 +205,8 @@ h4, .h4{
 			&:nth-of-type(3){
 				margin: 2% 2% 2% 1%;
 				color: #fff;
-				background: url('../img/pattern/2_b.jpg') top center repeat;
-				background-color: $blue;
+				// background: url('../img/pattern/2_b.jpg') top center repeat;
+				// background-color: $blue;
 				@include transition(0.5s, ease-in-out);
 
 				&.selected{
@@ -204,25 +217,34 @@ h4, .h4{
 			}
 			&.selected{
 				flex: 3;
+				background: rgba(37,37,37, 0.6);
 				@include transition(0.5s, ease-in-out);
 
 				.service_name{
-					// margin-top: 30%;
+					margin-top: 8vh;
 					padding: 0 5%;
+					@include transition(0.5s, ease-in-out);
 				}
 				.service_description{
 					opacity: 1;
 					height: auto;
-					@include transition(0.5s, ease-in-out);
+					@include transition(0.3s, ease-in-out);
+				}
+
+				& ~ .flex-item:hover{
+					// flex: 1;
+					flex-grow: 1;
 				}
 			}
 
 			.service_name{
-				margin-top: 40vh;
-				font-family: Georgia, serif;
+				margin-top: 18vh;
+				// font-family: $serifFont;
+				font-family: $cursiveFont;
 				font-size: 2.5em;
 				font-weight: 700;
 				margin-bottom: 1em;
+				@include transition(0.5s, ease-in-out);
 			}
 			.service_subtitle{
 				width: 80%;
@@ -235,7 +257,7 @@ h4, .h4{
 				margin: 1em auto 0;
 				opacity: 0;
 				padding: 0 5%;
-				@include transition(0.5s, ease-in-out);
+				@include transition(0.3s, ease-in-out);
 			}
 		}
 	}
@@ -267,7 +289,7 @@ h4, .h4{
 			margin-bottom: 0.5em;
 		}
 		.subtitle{
-			font-family: Georgia, 'Times New Roman', serif;
+			font-family: $cursiveFont;
 			font-style: italic;
 			font-size: 4em;
 			margin-top: 0.5em;
@@ -321,9 +343,9 @@ h4, .h4{
 
 			h4{
 				font-weight: 700;
-				font-size: 1.5em;
+				font-size: 2.5em;
 				border-bottom: 1px solid rgba(0,0,0, 0.3);
-				font-family: Georgia, 'Times New Roman', serif;
+				font-family: $cursiveFont;
 				padding-bottom: 10px;
 				margin: 0.7em 0;
 			}
@@ -368,7 +390,9 @@ h4, .h4{
 	.sectionTitle{
 		@extend .sectionTitle;
 		color: rgba(255,255,255, 1);
+		font-family: $cursiveFont;
 		line-height: 80px;
+		font-size: 5.5em;
 	}
 
 	.contact_list{
