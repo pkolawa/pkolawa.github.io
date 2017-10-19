@@ -15,6 +15,21 @@
 	<link href="./assets/css/main.css" rel="stylesheet" type="text/css"/>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="./assets/js/main.js" type="text/javascript"></script>
+	<script>
+		function renderCaptcha(){
+			$('#getContact').on('click', function(){
+				grecaptcha.render('mailCaptcha', {
+					'sitekey' : '6LfBCjUUAAAAANfUEr3a3nem-vmHoclPwki3aU7f',
+          			'callback' : renderContact
+		        });
+				$('#getContact').remove();
+			});
+		}
+		function renderContact(){
+			var domain = "gmail.com";
+			$('#mailCaptcha').before("<li><a href='mailto:p.kolawa@" + domain + "'>p.kolawa@" + domain + "</a></li>").remove();
+		}
+	</script>
 	<link href="./assets/css/jquery.fullpage.min.css" rel="stylesheet" type="text/css"/>
 	<script src="./assets/js/jquery.fullpage.min.js" type="text/javascript"></script>
 </head>
@@ -47,6 +62,7 @@
 			</div>
 		</section>
 		<section class="section" id="services">
+			<img src="https://i.imgur.com/z03nHDn.png" class="sectionSignet" alt="Peter Kolawa - logo"/>
 			<div class="flex-container">
 				<div class="flex-item">
 					<h2 class="service_name italics">web</h2>
@@ -161,20 +177,19 @@
 			<img src="https://i.imgur.com/z03nHDn.png" class="sectionSignet" alt="Peter Kolawa - logo"/>
 			<p class="h2 sectionTitle">Contact</p>
 			<div class="container">
-				<p class="contact_info">
-					<ul class="contact_list">
-						<li>PAKK</li>
-						<li data-contact="email">Grab my e-mail</li>
-						<li>
-							<ul class="social_signs">
-								<a href="https://stackoverflow.com/users/6103808/pkolawa" target="_blank" title="Peter Kolawa - StackOverflow account"><li><img src="https://i.imgur.com/WCmwgG0.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li></a>
-								<a href="https://www.linkedin.com/in/pkolawa/" target="_blank" title="Peter Kolawa - LinkedIn profile"><li><img src="https://i.imgur.com/6dojJkL.png" class="activity_sign" alt="Peter Kolawa - LinkedIn"/></li></a>
-								<a href="https://github.com/pkolawa" target="_blank" title="Peter Kolawa - GitHub repos"><li><img src="https://i.imgur.com/utHENJJ.png" class="activity_sign" alt="Peter Kolawa - GitHub"/></li></a>
-								<!-- <a href="#" target="_blank" title="Peter Kolawa - YouTube channel (Coming soon)"><li><img src="https://i.imgur.com/dCuY38u.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li></a> -->
-							</ul>
-						</li>
-					</ul>
-				</p>
+				<ul class="contact_list">
+					<li>Peter Kolawa</li>
+					<li id="getContact"> Click here to get contact</li>
+					<li id="mailCaptcha" data-contact="email"></li>
+					<li>
+						<ul class="social_signs">
+							<a href="https://stackoverflow.com/users/6103808/pkolawa" target="_blank" title="Peter Kolawa - StackOverflow account"><li><img src="https://i.imgur.com/WCmwgG0.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li></a>
+							<a href="https://www.linkedin.com/in/pkolawa/" target="_blank" title="Peter Kolawa - LinkedIn profile"><li><img src="https://i.imgur.com/6dojJkL.png" class="activity_sign" alt="Peter Kolawa - LinkedIn"/></li></a>
+							<a href="https://github.com/pkolawa" target="_blank" title="Peter Kolawa - GitHub repos"><li><img src="https://i.imgur.com/utHENJJ.png" class="activity_sign" alt="Peter Kolawa - GitHub"/></li></a>
+							<!-- <a href="#" target="_blank" title="Peter Kolawa - YouTube channel (Coming soon)"><li><img src="https://i.imgur.com/dCuY38u.png" class="activity_sign" alt="Peter Kolawa - StackOverflow"/></li></a> -->
+						</ul>
+					</li>
+				</ul>
 			</div>
 		</section>
 	</main>
@@ -200,9 +215,6 @@
 				var newvalueY = height * pageY * -1 - 50;
 				$('#intro').css("background-position", newvalueX+"px "+newvalueY+"px");
 
-				// var newDiagonal = parseInt((e.pageX / $(window).width() ) * 180) + 90;
-				// var newPercent = parseInt((e.pageY / $(window).height()) * 100) + 50;
-				// $('.overlay').css("background", "linear-gradient("+newDiagonal+"deg, rgba(72,156,200,0) 0%,rgba(72,156,200,0.3) "+newPercent+"%,rgba(72,156,200,1) 100%)");
 			});
 
 			$('#services .flex-item').on('click', function(){
@@ -214,10 +226,8 @@
 				}
 			});
 
-			$('#contact li').on('click', function(){
-				$(this).attr("data-contact");
-			});
 		});
 	</script>
+	<script src="https://www.google.com/recaptcha/api.js?onload=renderCaptcha&render=explicit"></script>
 </body>
 </html>

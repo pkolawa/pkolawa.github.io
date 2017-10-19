@@ -92,7 +92,6 @@ h4, .h4 {
 #intro h2 {
   font-weight: 400;
   font-family: "Arial", serif;
-  padding-top: 10vh;
   font-size: 2.4em;
   letter-spacing: 0.03em;
   text-shadow: 0 0 5px rgba(72, 156, 200, 0.4);
@@ -145,6 +144,19 @@ h4, .h4 {
   background: url("https://i.imgur.com/AVpyD83.jpg") top center no-repeat;
   background-color: #252525;
   background-size: cover;
+}
+
+#services .sectionSignet {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  opacity: 0.1;
+  width: 80px;
+  height: 80px;
+  -webkit-transition: 0.3s ease-in-out;
+  -moz-transition: 0.3s ease-in-out;
+  -o-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 #services .flex-container .flex-item {
@@ -437,6 +449,7 @@ h4, .h4 {
   font-family: "Reenie Beanie", cursive;
   line-height: 80px;
   font-size: 5.5em;
+  margin-bottom: 0;
 }
 
 #contact .contact_list {
@@ -446,6 +459,18 @@ h4, .h4 {
   list-style: none;
   padding: 0;
   font-size: 1.3em;
+}
+
+#contact .contact_list li {
+  margin-bottom: 10px;
+}
+
+#contact .contact_list #getContact:hover {
+  cursor: pointer;
+}
+
+#contact .contact_list #mailCaptcha > div {
+  margin: 0 auto;
 }
 
 #contact .contact_list .social_signs {
