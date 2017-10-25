@@ -166,6 +166,19 @@ h4, .h4{
 		@include transition(0.3s, ease-in-out);
 	}
 
+	.sectionTitle{
+		@extend .sectionTitle;
+		font-family: $cursiveFont;
+		color: #fff;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		font-size: 6em;
+		line-height: 2.2em;
+		opacity: 0.4;
+	}
+
 	.flex-container{
 		@extend .flex;
 
@@ -418,8 +431,12 @@ h4, .h4{
 			margin-bottom: 10px;
 		}
 
-		#getContact:hover{
-			cursor: pointer;
+		#getContact{
+			font-style: italic;
+			
+			&:hover{
+				cursor: pointer;
+			}
 		}
 
 		#mailCaptcha > div{
