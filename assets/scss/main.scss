@@ -289,6 +289,11 @@ h4, .h4{
 }
 #experience{
 	z-index: 110;
+	background: #f0f0f0;
+	background: -moz-linear-gradient(top, #d3d3d3 0%, #f0f0f0 100%); 
+	background: -webkit-linear-gradient(top, #d3d3d3 0%,#f0f0f0 100%); 
+	background: linear-gradient(to bottom, #d3d3d3 0%,#f0f0f0 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0f0f0', endColorstr='#d3d3d3',GradientType=0 );
 
 	.sectionSignet{
 		// position: absolute;
