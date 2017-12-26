@@ -108,7 +108,6 @@ h4, .h4{
 	}
 	.main_logo{
 		display: inline-block;
-		margin: 0 auto;
 		vertical-align: middle;
 		width: 30%;
 		margin: 0 10%;
@@ -227,13 +226,9 @@ h4, .h4{
 			&:nth-of-type(3){
 				margin: 2% 2% 2% 1%;
 				color: #fff;
-				// background: url('../img/pattern/2_b.jpg') top center repeat;
-				// background-color: $blue;
 				@include transition(0.5s, ease-in-out);
 
 				&.selected{
-					// background: url('../img/6.jpg') top center no-repeat;
-					// background-color: $blue;
 					@include transition(0.5s, ease-in-out);
 				}
 			}
@@ -433,7 +428,7 @@ h4, .h4{
 
 		#getContact{
 			font-style: italic;
-			
+
 			&:hover{
 				cursor: pointer;
 			}
@@ -471,8 +466,52 @@ h4, .h4{
 
 }
 
-@media screen and (max-width: 1024px){
+@media only screen and (max-width: 1024px){
 	#intro{
 		background-size: cover;
+	}
+	#services{
+		.flex-container{
+			.flex-item{
+				&:hover{
+					flex: 1;
+				}
+				&.selected{
+					flex: 2;
+					background: rgba(37,37,37, 0.8);
+				}
+			}
+		}
+	}
+}
+
+
+@media only screen and (max-width: 640px){
+	#intro{
+		.main_logo{
+			display: block;
+			width: 50%;
+			margin: 0 25%;
+		}
+		.overlay{
+			.wrapper{
+				width: 60vw;
+			}
+		}
+	}
+	#servies{
+		.flex{
+			flex-direction: column;
+		}
+		.flex-container{
+			.flex-item{
+				background: rgba(255,255,255, 0.8);
+			}
+		}
+	}
+	#activities{
+		.activity{
+			width: 98%;
+		}
 	}
 }
