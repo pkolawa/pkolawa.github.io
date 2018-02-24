@@ -153,6 +153,8 @@ h4, .h4{
 #services{
 	z-index: 115;
 	background: url('https://i.imgur.com/AVpyD83.jpg') top center no-repeat;
+	position: relative;
+	background-attachment: fixed;
 	background-color: $black;
 	background-size: cover;
 
