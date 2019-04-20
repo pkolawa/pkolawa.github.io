@@ -309,6 +309,17 @@ footer{
 
 
 @media only screen and (max-width: 1024px){
+	#section{
+		&--intro{
+			.intro__logo{
+				width: 80%;
+			}
+			.intro__video{
+				height: 100%;
+				width: auto;
+			}
+		}
+	}
 }
 
 
