@@ -58,12 +58,14 @@ p {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-around;
+  align-items: stretch;
+  align-content: center;
 }
 
 .flex--item {
   flex-basis: 200px;
+  vertical-align: top;
 }
 
 :link,
@@ -261,6 +263,41 @@ footer p {
   #section--intro .intro__video {
     height: 100%;
     width: auto;
+    margin-left: -50%;
+  }
+  .fieldDetails__list-element {
+    flex-basis: 25%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  #section--intro .section__contentWrapper {
+    padding-top: 20vh;
+    height: 80vh;
+  }
+  .section__contentWrapper {
+    height: auto;
+  }
+  .flex--item {
+    flex-basis: 100%;
+  }
+  .field__overview-container {
+    margin-bottom: 15px;
+    box-sizing: border-box;
+  }
+  .field__overview-description {
+    text-align: justify;
+  }
+  .fieldDetails__list {
+    padding: 0;
+  }
+  .fieldDetails__list-element {
+    flex-basis: 100%;
+  }
+  .fieldDetails__repo-thumbnail {
+    float: right;
+    margin-top: 20px;
+    max-width: 30%;
   }
 }
 
