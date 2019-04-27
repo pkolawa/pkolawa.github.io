@@ -249,6 +249,12 @@ section {
 footer {
   background-color: #fafafa;
   padding: 5px 0;
+  height: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: none;
 }
 
 footer p {

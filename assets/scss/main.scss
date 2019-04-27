@@ -302,6 +302,14 @@ section{
 footer{
 	background-color: $gray;
 	padding: 5px 0;
+	height: 1.5rem;
+
+	//TODO: TO BE REMOVED AFTER FULL DEPLOY
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: none;
 
 	p{
 		text-align: center;
