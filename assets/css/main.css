@@ -164,7 +164,6 @@ section {
 .section__contentWrapper {
   width: 100%;
   min-height: 600px;
-  align-items: center;
 }
 
 .section__title {
@@ -277,6 +276,21 @@ footer p {
   #section--intro .intro__video {
     height: 100%;
     width: auto;
+  }
+  .fieldDetails__list {
+    padding: 0;
+  }
+  .fieldDetails__list-element {
+    flex-basis: 45%;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .fieldDetails__list {
+    padding: 0;
+  }
+  .fieldDetails__list-element {
+    flex-basis: 100%;
   }
 }
 
