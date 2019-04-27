@@ -62,7 +62,7 @@ p{
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-around;
-		align-items: center;
+		align-items: flex-start;
 	}
 	&--item{
 		flex-basis: 200px;
@@ -194,10 +194,10 @@ section{
 		&:before{
 			content: '';
 			position: absolute;
-			top: -5px;
+			top: -2px;
 			left: 10vw;
 			width: 80vw;
-			height: 8px;
+			height: 3px;
 			background-color: lighten($black, 30);
 		}
 	}
@@ -206,8 +206,8 @@ section{
 .section{
 	&__contentWrapper{
 		width: 100%;
-		height: 80vh;
 		min-height: 600px;
+		align-items: center;
 	}
 
 	&__title{
@@ -261,7 +261,7 @@ section{
 
 .fieldDetails{
 	&__wrapper{
-		height: 100%;
+		min-height: 100%;
 		overflow: hidden;
 	}
 
@@ -272,17 +272,22 @@ section{
 	&__list-element{
 		list-style: none;
 		padding: 15px 0;
-		flex-basis: 20%;
+		margin: 20px 0 10px;
+		flex-basis: 22%;
+		position: relative;
 	}
 
 	&__repo-thumbnail{
-		border-radius: 50%;
+		width: 150px;
+		height: auto;
+		margin: 0 auto;
 	}
-	&__repo-title{
-
+	&__repo-name{
+		letter-spacing: 0.1em;
 	}
 	&__repo-desc{
-
+		text-align: justify;
+		min-height: 8em;
 	}
 	&__repo-link{
 		font-weight: 700;
@@ -290,6 +295,9 @@ section{
 		margin-top: 10px;
 		display: inline-block;
 		text-decoration: none;
+		position: absolute;
+		right: 0;
+		bottom: 0;
 
 		&:hover{
 			border-bottom-color: $green;
