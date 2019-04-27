@@ -15,6 +15,7 @@ body{
 	margin: 0;
 	padding: 0;
 	background: $gray;
+	position: relative;
 }
 h1, .h1,
 h2, .h2,
@@ -309,7 +310,8 @@ footer{
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	background-color: none;
+	background-color: transparent;
+	color: #aaa;
 
 	p{
 		text-align: center;
@@ -347,22 +349,31 @@ footer{
 
 
 @media only screen and (max-width: 640px){
+	$mobile_section_padding: 2vh;
+	
+	section{
+		padding: $mobile_section_padding $mobile_section_padding $mobile_section_padding*2 $mobile_section_padding;
+	}
+
 	#section{
 		&--intro{
 			.section__contentWrapper{
-				padding-top: 20vh;
-				height: 80vh;
+				padding-top: 40vh;
+				height: calc(100vh - #{$mobile_section_padding} - 2rem);
+			}
+
+			.intro__subtitle{
+				font-size: 1.5rem;
+			}
+			.intro__button{
+				font-size: 1.2rem;
 			}
 		}
 		&--fields{
 
 		}
 	}
-	.section{
-		&__contentWrapper{
-			height: auto;
-		}
-	}
+	
 	.flex{
 		&--wrapper{
 		}
@@ -394,5 +405,8 @@ footer{
 			margin-top: 20px;
 			max-width: 30%;
 		}
+	}
+
+	footer{
 	}
 }

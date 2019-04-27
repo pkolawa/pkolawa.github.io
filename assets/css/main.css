@@ -6,6 +6,7 @@ body {
   margin: 0;
   padding: 0;
   background: #fafafa;
+  position: relative;
 }
 
 h1, .h1,
@@ -254,7 +255,8 @@ footer {
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: none;
+  background-color: transparent;
+  color: #aaa;
 }
 
 footer p {
@@ -277,12 +279,18 @@ footer p {
 }
 
 @media only screen and (max-width: 640px) {
-  #section--intro .section__contentWrapper {
-    padding-top: 20vh;
-    height: 80vh;
+  section {
+    padding: 2vh 2vh 4vh 2vh;
   }
-  .section__contentWrapper {
-    height: auto;
+  #section--intro .section__contentWrapper {
+    padding-top: 40vh;
+    height: calc(100vh - 2vh - 2rem);
+  }
+  #section--intro .intro__subtitle {
+    font-size: 1.5rem;
+  }
+  #section--intro .intro__button {
+    font-size: 1.2rem;
   }
   .flex--item {
     flex-basis: 100%;
