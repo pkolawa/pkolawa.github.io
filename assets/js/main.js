@@ -5,4 +5,3 @@ document.querySelectorAll('button.scroller').forEach(anchor => {
         });
     });
 })
-
