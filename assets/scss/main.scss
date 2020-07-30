@@ -109,117 +109,12 @@ section{
 	  transform: translate3d(4px, 0, 0);
 	}
 }
-@keyframes move_wave {
-    0% {
-        transform: translateX(0) translateZ(0) scaleY(1)
-    }
-    50% {
-        transform: translateX(-25%) translateZ(0) scaleY(0.55)
-    }
-    100% {
-        transform: translateX(-50%) translateZ(0) scaleY(1)
-    }
-}
-@keyframes move_wave_rotated {
-    0% {
-        transform: translateX(0) translateZ(0) scaleY(1)
-    }
-    50% {
-        transform: translateX(25%) translateZ(0) scaleY(0.55)
-    }
-    100% {
-        transform: translateX(50%) translateZ(0) scaleY(1)
-    }
-}
-.waveWrapper {
-    overflow: hidden;
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    margin: auto;
-	
-	&.rotated {
-		transform: rotate(180deg);
-	}
-}
-.waveWrapperInner {
-    position: absolute;
-    width: 100%;
-    overflow: hidden;
-    height: 100%;
-    bottom: -1px;
-}
-.bgTop {
-    z-index: 15;
-    // opacity: 0.5;
-}
-.bgMiddle {
-    z-index: 10;
-    // opacity: 0.75;
-}
-.bgBottom {
-    z-index: 5;
-}
-.wave {
-    position: absolute;
-    left: 0;
-    width: 200%;
-    height: 100%;
-    background-repeat: repeat no-repeat;
-    background-position: 0 bottom;
-	transform-origin: center bottom;
-}
-.rotated .wave {
-	right: 0;
-	left: unset;
-}
-.waveTop {
-    background-size: 50% 100px;
-}
-.waveMiddle {
-    background-size: 50% 120px;
-}
-.waveBottom {
-    background-size: 50% 100px;
-}
-.waveAnimation {
-	.waveBottom {
-		animation: move_wave 5s linear infinite;
-		-webkit-animation: move_wave 5s linear infinite;
-		-webkit-animation-delay: 5s;
-		animation-delay: 5s;
-	}
-	.waveMiddle {
-		animation: move_wave 8s linear infinite;
-	}
-	.waveTop {
-		animation: move_wave 12s linear infinite;
-	}
-
-	&.rotated {
-		.waveBottom {
-			animation: move_wave_rotated 5s;
-			-webkit-animation: move_wave_rotated 5s;
-			-webkit-animation-delay: 5s;
-			animation-delay: 5s;
-		}
-		.waveMiddle {
-			animation: move_wave_rotated 10s linear infinite;
-			-webkit-animation: move_wave_rotated 10s linear infinite;
-		}
-		.waveTop {
-			animation: move_wave_rotated 20s linear infinite;
-			-webkit-animation: move_wave_rotated 20s linear infinite;
-		}
-	}
-}
+@import '_pkolawaWaves';
 
 #section{
 	&--intro{
 		// color: #fff;
-		padding: 20vh 10vh;
+		padding: 15vh 10vh;
 		position: relative;
 
 		.section__contentWrapper{
@@ -275,6 +170,28 @@ section{
 	&--fields {
 		padding: 25vh 10vh 15vh;
 	}
+
+	&--coverLetter {
+		.coverLetter__miniature {
+			width: 40%;
+			margin: 20px 0;
+			box-shadow: 0 0 5px rgba(0,0,0, 0.6);
+			transition: 0.5s ease-in-out;
+
+			&.expanded {
+				width: 80%;
+				margin: 30px auto;
+				transition: 0.5s ease-in-out;
+			}
+
+			&:hover{
+				cursor: pointer;
+				box-shadow: 0 0 10px rgba(0,0,0, 0.8);
+				transition: 0.5s linear;
+			}
+		}
+	}
+
 	&--lists{
 		position: relative;
 

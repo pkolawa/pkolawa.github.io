@@ -19,7 +19,7 @@
   "devDependencies": {
     "cheerio": "^0.22.0",
     "grunt": "^1.0.1",
-    "grunt-contrib-uglify": "^2.3.0",
+    "grunt-contrib-uglify": "^4.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-sass": "^2.0.0",
     "jasmine": "^2.5.3"
