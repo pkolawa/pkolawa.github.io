@@ -13,7 +13,7 @@ body{
 	font-size: 14px;
 	margin: 0;
 	padding: 0;
-	background: $gray;
+	// background: $gray;
 	position: relative;
 }
 h1, .h1,
@@ -67,7 +67,7 @@ p{
 	}
 	&--item{
 		flex-basis: 200px;
-		vertical-align: top;
+		align-self: flex-end;
 	}
 }
 
@@ -81,64 +81,184 @@ p{
 header{
 	position: absolute;
 	width: 100%;
-	height: 30vh;
+	height: 20vh;
 	top: 0;
 	left: 0;
 	display: none;
 }
 
 section{
-	min-height: 80vh;
+	min-height: 60vh;
 	padding: 10vh 10vh;
+	position: relative;
+}
+@keyframes shake {
+	10%, 90% {
+	  transform: translate3d(-1px, 0, 0);
+	}
+	
+	20%, 80% {
+	  transform: translate3d(2px, 0, 0);
+	}
+  
+	30%, 50%, 70% {
+	  transform: translate3d(-4px, 0, 0);
+	}
+  
+	40%, 60% {
+	  transform: translate3d(4px, 0, 0);
+	}
+}
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+@keyframes move_wave_rotated {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(50%) translateZ(0) scaleY(1)
+    }
+}
+.waveWrapper {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+	
+	&.rotated {
+		transform: rotate(180deg);
+	}
+}
+.waveWrapperInner {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+    bottom: -1px;
+}
+.bgTop {
+    z-index: 15;
+    // opacity: 0.5;
+}
+.bgMiddle {
+    z-index: 10;
+    // opacity: 0.75;
+}
+.bgBottom {
+    z-index: 5;
+}
+.wave {
+    position: absolute;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background-repeat: repeat no-repeat;
+    background-position: 0 bottom;
+	transform-origin: center bottom;
+}
+.rotated .wave {
+	right: 0;
+	left: unset;
+}
+.waveTop {
+    background-size: 50% 100px;
+}
+.waveMiddle {
+    background-size: 50% 120px;
+}
+.waveBottom {
+    background-size: 50% 100px;
+}
+.waveAnimation {
+	.waveBottom {
+		animation: move_wave 5s linear infinite;
+		-webkit-animation: move_wave 5s linear infinite;
+		-webkit-animation-delay: 5s;
+		animation-delay: 5s;
+	}
+	.waveMiddle {
+		animation: move_wave 8s linear infinite;
+	}
+	.waveTop {
+		animation: move_wave 12s linear infinite;
+	}
+
+	&.rotated {
+		.waveBottom {
+			animation: move_wave_rotated 5s;
+			-webkit-animation: move_wave_rotated 5s;
+			-webkit-animation-delay: 5s;
+			animation-delay: 5s;
+		}
+		.waveMiddle {
+			animation: move_wave_rotated 10s linear infinite;
+			-webkit-animation: move_wave_rotated 10s linear infinite;
+		}
+		.waveTop {
+			animation: move_wave_rotated 20s linear infinite;
+			-webkit-animation: move_wave_rotated 20s linear infinite;
+		}
+	}
 }
 
 #section{
 	&--intro{
-		color: #fff;
+		// color: #fff;
+		padding: 20vh 10vh;
 		position: relative;
 
 		.section__contentWrapper{
 			box-sizing: border-box;
-			padding: 30vh 10vw 10vh;
+			padding: 20vh 10vw 10vh;
 			text-align: center;
 			position: relative;
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
-			box-shadow: inset 0 20vw 60vh rgba($blue, 0.5), inset 0 -40vh 60vh rgba($green, 0.5);
+			// box-shadow: inset 0 20vw 60vh rgba($blue, 0.5), inset 0 -40vh 60vh rgba($green, 0.5);
 			z-index: 10;
 		}
 
 		.intro__logo{
 			width: 35%;
 			display: block;
-			margin: 0 auto 2vh;
+			margin: 0 auto 30px;
 			z-index: 10;
 		}
 		.intro__subtitle{
-			font-size: 3rem;
+			font-size: 2rem;
 			margin-bottom: 5vh;
 			z-index: 10;
 			font-family: $cursiveFont;
 		}
 		.intro__button{
 			background: none;
-			color: white;
-			// border: 2px solid white;
-			border-top: none;
-			border-left: none;
-			border-right: none;
-			border-bottom: 2px solid white;
+			border: none;
 			position: absolute;
-			bottom: 10vh;
+			bottom: 0;
 			left: 50%;
 			transform: translateX(-50%);
 			margin: 0 auto;
-			font-size: 1.5rem;
+			font-size: 1rem;
 			padding: 0.5rem 1.5rem;
 			z-index: 10;
-			font-family: $cursiveFont;
-			font-size: 2rem;
+			font-size: 1.2rem;
+			opacity: 0.5;
 		}
 		.intro__video{
 			position: fixed;
@@ -152,18 +272,19 @@ section{
 		}
 	}
 
-	&--fields,
+	&--fields {
+		padding: 25vh 10vh 15vh;
+	}
 	&--lists{
-		background-color: $gray;
 		position: relative;
 
 		&:before{
 			content: '';
 			position: absolute;
 			top: -2px;
-			left: 10vw;
-			width: 80vw;
-			height: 3px;
+			left: 5vw;
+			width: 90vw;
+			height: 1px;
 			background-color: lighten($black, 30);
 		}
 	}
@@ -237,7 +358,7 @@ section{
 	&__list-element{
 		list-style: none;
 		padding: 15px 0;
-		margin: 20px 0 10px;
+		margin: 30px 20px;
 		flex-basis: 22%;
 		position: relative;
 	}
@@ -245,7 +366,14 @@ section{
 	&__repo-thumbnail{
 		width: 150px;
 		height: auto;
-		margin: 0 auto;
+		margin: 0 calc(50% - 75px);
+
+		&:hover{
+			animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+			transform: translate3d(0, 0, 0);
+			backface-visibility: hidden;
+			perspective: 1000px;
+		}
 	}
 	&__repo-name{
 		letter-spacing: 0.1em;
@@ -271,7 +399,6 @@ section{
 }
 
 footer{
-	background-color: $gray;
 	padding: 5px 0;
 	height: 1.5rem;
 
@@ -336,10 +463,11 @@ footer{
 			}
 
 			.intro__subtitle{
-				font-size: 1.5rem;
+				font-size: 0.8rem;
 			}
+
 			.intro__button{
-				font-size: 1.2rem;
+				font-size: 1rem;
 			}
 		}
 		&--fields{
