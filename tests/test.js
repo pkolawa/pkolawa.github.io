@@ -10,8 +10,3 @@ describe("HTML elements", function() {
   });
 
 });
-
-describe("All elements", function(){
-
-	
-});
