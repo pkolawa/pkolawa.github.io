@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "jasmine tests/test.js"
+    "test": "jasmine tests/test.js",
+    "build": "sass ./assets/scss/main.scss ./assets/css/main.css --style compressed && uglifyjs --compress ./assets/js/main.js ./assets/js/main.min.js"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,8 @@
   },
   "homepage": "https://github.com/pkolawa/pkolawa.github.io#readme",
   "devDependencies": {
-    "grunt": "^1.0.1",
-    "grunt-contrib-uglify": "^4.0.1",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^2.0.0"
+    "node-gyp": "^9.4.0",
+    "sass": "^1.69.3",
+    "uglify-js": "^3.17.4"
   }
 }
