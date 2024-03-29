@@ -1,3 +1,5 @@
 node_modules/
 assets/img/8_old.jpg
 200.psd
+.vscode/
+.DS_Store
