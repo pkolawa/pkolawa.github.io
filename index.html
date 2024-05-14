@@ -204,10 +204,8 @@
 	<script>
 		(function() {
 			const expandableElements = document.getElementsByClassName('js-clickToExpand');
-			console.dir(expandableElements);
 			
 			for(var i = 0; i < expandableElements.length; i++){
-				console.dir(expandableElements[i]);
 				expandableElements[i].addEventListener('click', (e) => {
 					e.target.classList.toggle('expanded');
 				});
