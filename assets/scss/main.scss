@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,900;subset=latin-ext');
+@use 'sass:color';
+@use 'mixins' as *;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,900;subset=latin-ext');
 
 $green: #57c177;
 $gray: #fafafa;
 $blue: #28abef;
 $black: #252525;
-
-$cursiveFont: 'Nothing You Could Do', cursive;
-@import "mixins";
 
 body{
 	font-family: 'Montserrat', Arial, sans-serif;
@@ -284,7 +284,7 @@ section{
 			left: 5vw;
 			width: 90vw;
 			height: 1px;
-			background-color: lighten($black, 30);
+			background-color: color.adjust($black, $lightness: 30%);
 		}
 	}
 }
