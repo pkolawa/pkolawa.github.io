@@ -110,7 +110,7 @@ section{
 }
 @import '_pkolawaWaves';
 
-#section{
+.section{
 	&--intro{
 		// color: #fff;
 		padding: 15vh 10vh;
@@ -166,7 +166,10 @@ section{
 	}
 
 	&--fields {
-		padding: 25vh 10vh 0;
+		padding: 20vh 10vh 0;
+		&:nth-of-type(1) {
+			padding-top: 25vh;
+		}
 	}
 
 	&--coverLetter {
@@ -332,7 +335,7 @@ footer{
 
 
 @media only screen and (max-width: 1024px){
-	#section{
+	.section{
 		&--intro{
 			.intro__logo{
 				width: 80%;
@@ -369,7 +372,7 @@ footer{
 		padding: $mobile_section_padding $mobile_section_padding $mobile_section_padding*2 $mobile_section_padding;
 	}
 
-	#section{
+	.section{
 		&--intro{
 			.section__contentWrapper{
 				padding-top: 40vh;
@@ -383,9 +386,6 @@ footer{
 			.intro__button{
 				font-size: 1rem;
 			}
-		}
-		&--fields{
-
 		}
 	}
 
