@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "mocha tests/test.js",
-    "build": "sass ./assets/scss/main.scss ./assets/css/main.css --style compressed && uglifyjs --compress ./assets/js/main.js ./assets/js/main.min.js"
+    "build": "sass ./assets/scss/main.scss ./assets/css/main.css --style compressed"
   },
   "repository": {
     "type": "git",
