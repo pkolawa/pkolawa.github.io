@@ -167,9 +167,9 @@ section{
 
 	&--fields {
 		padding: 20vh 10vh 0;
-		&:nth-of-type(1) {
-			padding-top: 25vh;
-		}
+	}
+	&--fields:nth-of-type(2) {
+		padding-top: 25vh;
 	}
 
 	&--coverLetter {
@@ -195,16 +195,6 @@ section{
 
 	&--lists{
 		position: relative;
-
-		&:before{
-			content: '';
-			position: absolute;
-			top: -2px;
-			left: 5vw;
-			width: 90vw;
-			height: 1px;
-			background-color: lighten($black, 30);
-		}
 	}
 }
 
@@ -218,6 +208,7 @@ section{
 		font-weight: 700;
 		font-size: 3rem;
 		position: relative;
+		margin-bottom: 20px;
 		
 		&:after{
 			content: '';
@@ -243,9 +234,11 @@ section{
 	&__overview-container{
 		padding-bottom: 3em;
 		position: relative;
+		margin-bottom: 40px;
 	}
 	&__overview-name{
 		font-weight: 700;
+		letter-spacing: 0;
 	}
 	&__overview-description{
 		
@@ -293,7 +286,7 @@ section{
 		}
 	}
 	&__repo-name{
-		letter-spacing: 0.1em;
+		letter-spacing: 0;
 	}
 	&__repo-desc{
 		text-align: justify;
@@ -352,6 +345,7 @@ footer{
 		&--wrapper{
 		}
 		&--item{
+			flex-basis: 55%;
 		}
 	}
 	.fieldDetails{
