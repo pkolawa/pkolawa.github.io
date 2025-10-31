@@ -16,12 +16,12 @@ body{
 	// background: $gray;
 	position: relative;
 }
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4{
-	letter-spacing: 0.15em;
-}
+// h1, .h1,
+// h2, .h2,
+// h3, .h3,
+// h4, .h4{
+// 	letter-spacing: 0;
+// }
 h1, .h1{
 	font-weight: 700;
 	font-size: 2rem;
@@ -219,7 +219,7 @@ section{
 #section{
 	&--intro{
 		// color: #fff;
-		padding: 20vh 10vh;
+		padding: 0 10vh 20vh;
 		position: relative;
 
 		.section__contentWrapper{
@@ -244,7 +244,6 @@ section{
 			font-size: 2rem;
 			margin-bottom: 5vh;
 			z-index: 10;
-			font-family: $cursiveFont;
 		}
 		.intro__button{
 			background: none;
@@ -327,7 +326,6 @@ section{
 		position: relative;
 	}
 	&__overview-name{
-		font-family: $cursiveFont;
 		font-weight: 700;
 	}
 	&__overview-description{
@@ -376,7 +374,7 @@ section{
 		}
 	}
 	&__repo-name{
-		letter-spacing: 0.1em;
+		font-weight: 700;
 	}
 	&__repo-desc{
 		text-align: justify;

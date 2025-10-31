@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.html",
   "scripts": {
-    "test": "jasmine tests/test.js"
+    "test": "jasmine tests/test.js",
+    "dev": "grunt dev",
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",
@@ -17,11 +19,15 @@
   },
   "homepage": "https://github.com/pkolawa/pkolawa.github.io#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.21",
     "cheerio": "^0.22.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-uglify": "^2.3.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-sass": "^2.0.0",
-    "jasmine": "^2.5.3"
+    "grunt": "^1.6.1",
+    "grunt-contrib-watch": "^1.1.0",
+    "grunt-dart-sass": "^2.0.1",
+    "grunt-postcss": "^0.9.0",
+    "grunt-terser": "^2.0.0",
+    "jasmine": "^2.5.3",
+    "postcss": "^8.5.6",
+    "sass": "^1.93.2"
   }
 }
