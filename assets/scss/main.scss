@@ -87,7 +87,7 @@ header{
 }
 
 section{
-	min-height: 60vh;
+	min-height: 20vh;
 	padding: 10vh 10vh;
 	position: relative;
 }
@@ -166,7 +166,7 @@ section{
 	}
 
 	&--fields {
-		padding: 25vh 10vh 15vh;
+		padding: 25vh 10vh 0;
 	}
 
 	&--coverLetter {
@@ -208,7 +208,7 @@ section{
 .section{
 	&__contentWrapper{
 		width: 100%;
-		min-height: 600px;
+		min-height: 400px;
 	}
 
 	&__title{
