@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Caveat|Montserrat:400,900;subset=latin-ext");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,900;subset=latin-ext");
 body {
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 14px;
@@ -179,7 +179,6 @@ section {
 .waveAnimation .waveBottom {
   animation: move_wave 5s linear infinite;
   -webkit-animation: move_wave 5s linear infinite;
-  -webkit-animation-delay: 5s;
   animation-delay: 5s;
 }
 .waveAnimation .waveMiddle {
@@ -191,7 +190,6 @@ section {
 .waveAnimation.rotated .waveBottom {
   animation: move_wave_rotated 5s;
   -webkit-animation: move_wave_rotated 5s;
-  -webkit-animation-delay: 5s;
   animation-delay: 5s;
 }
 .waveAnimation.rotated .waveMiddle {
@@ -248,7 +246,8 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   z-index: -1;
   opacity: 0.3;
 }
@@ -435,5 +434,4 @@ footer p {
     max-width: 60%;
   }
 }
-
 /*# sourceMappingURL=main.css.map */
