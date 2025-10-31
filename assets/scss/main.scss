@@ -216,7 +216,7 @@ section{
 	}
 }
 
-#section{
+.section{
 	&--intro{
 		// color: #fff;
 		padding: 0 10vh 20vh;
@@ -416,7 +416,7 @@ footer{
 
 
 @media only screen and (max-width: 1024px){
-	#section{
+	.section{
 		&--intro{
 			.intro__logo{
 				width: 80%;
@@ -453,7 +453,7 @@ footer{
 		padding: $mobile_section_padding $mobile_section_padding $mobile_section_padding*2 $mobile_section_padding;
 	}
 
-	#section{
+	.section{
 		&--intro{
 			.section__contentWrapper{
 				padding-top: 40vh;
