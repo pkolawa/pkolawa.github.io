@@ -18,8 +18,8 @@
   },
   "homepage": "https://github.com/pkolawa/pkolawa.github.io#readme",
   "devDependencies": {
-    "mocha": "^10.2.0",
-    "node-gyp": "^9.4.0",
+    "mocha": "^11.7.5",
+    "node-gyp": "^12.1.0",
     "sass": "^1.69.3",
     "uglify-js": "^3.17.4"
   },
