@@ -25,5 +25,9 @@
   },
   "dependencies": {
     "cheerio": "^1.1.2"
+  },
+  "overrides": {
+    "serialize-javascript": "^7.0.4",
+    "diff": "^8.0.3"
   }
 }
