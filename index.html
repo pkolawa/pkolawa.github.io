@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMX7CPDN92"></script>
+	<!-- Google Consent Mode v2 — must run before GA script loads -->
 	<script>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
+	gtag('consent', 'default', {
+		'analytics_storage':  'denied',
+		'ad_storage':         'denied',
+		'ad_user_data':       'denied',
+		'ad_personalization': 'denied',
+		'wait_for_update':    500
+	});
+	if (localStorage.getItem('cookie_consent') === 'granted') {
+		gtag('consent', 'update', { 'analytics_storage': 'granted' });
+	}
+	</script>
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-TMX7CPDN92"></script>
+	<script>
 	gtag('js', new Date());
-
 	gtag('config', 'G-TMX7CPDN92');
 	</script>
 	<!-- META TAGS!!! -->
@@ -272,12 +284,22 @@
 			<p id="footerCopyrightsParagraph">© 2026 <a href="https://pkolawa.pl">Piotr Kolawa</a>. All rights reserved.</p>
 		</div>
 	</footer>
+	<div id="cookie-banner" class="cookie-banner" role="dialog" aria-modal="false" aria-label="Cookie consent">
+		<p class="cookie-banner__text">
+			This site uses Google Analytics to understand how visitors interact with the content.
+			No personal data is shared with third parties.
+			<a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>
+		</p>
+		<div class="cookie-banner__actions">
+			<button id="cookie-accept" class="cookie-banner__btn cookie-banner__btn--accept">Accept</button>
+			<button id="cookie-decline" class="cookie-banner__btn cookie-banner__btn--decline">Decline</button>
+		</div>
+	</div>
 	<script>
 		(function() {
-			const expandableElements = document.getElementsByClassName('js-clickToExpand');
-
-			for(var i = 0; i < expandableElements.length; i++){
-				expandableElements[i].addEventListener('click', (e) => {
+			var expandableElements = document.getElementsByClassName('js-clickToExpand');
+			for (var i = 0; i < expandableElements.length; i++) {
+				expandableElements[i].addEventListener('click', function(e) {
 					e.target.classList.toggle('expanded');
 				});
 			}
@@ -289,15 +311,36 @@
 			document.querySelectorAll('.site-footer a[href^="#"]').forEach(function(link) {
 				link.addEventListener('click', function(e) {
 					e.preventDefault();
-					const target = this.getAttribute('href');
+					var target = this.getAttribute('href');
 					if (target === '#') {
 						window.scrollTo({ top: 0, behavior: 'smooth' });
 					} else {
-						const section = document.querySelector(target);
+						var section = document.querySelector(target);
 						if (section) section.scrollIntoView({ behavior: 'smooth' });
 					}
 				});
 			});
+
+			(function() {
+				var banner = document.getElementById('cookie-banner');
+				var consent;
+				try { consent = localStorage.getItem('cookie_consent'); } catch(e) { consent = null; }
+
+				if (consent === null) {
+					banner.classList.add('cookie-banner--visible');
+				}
+
+				document.getElementById('cookie-accept').addEventListener('click', function() {
+					try { localStorage.setItem('cookie_consent', 'granted'); } catch(e) {}
+					gtag('consent', 'update', { 'analytics_storage': 'granted' });
+					banner.classList.remove('cookie-banner--visible');
+				});
+
+				document.getElementById('cookie-decline').addEventListener('click', function() {
+					try { localStorage.setItem('cookie_consent', 'denied'); } catch(e) {}
+					banner.classList.remove('cookie-banner--visible');
+				});
+			})();
 		})();
 	</script>
 </body>

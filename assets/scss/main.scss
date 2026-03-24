@@ -451,6 +451,116 @@ section{
 }
 
 
+.cookie-banner {
+	--cb-bg:      #{$black};
+	--cb-color:   #{$gray};
+	--cb-border:  #{$green};
+	--cb-decline: rgba(#{$gray}, 0.15);
+
+	@media (prefers-color-scheme: light) {
+		--cb-bg:      #ffffff;
+		--cb-color:   #{$black};
+		--cb-border:  #{$green};
+		--cb-decline: rgba(#{$black}, 0.08);
+	}
+
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+	background-color: var(--cb-bg);
+	color: var(--cb-color);
+	border-top: 3px solid var(--cb-border);
+	padding: 1.25rem 8vw;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem 2rem;
+	font-size: 0.85rem;
+	box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.15);
+
+	transform: translateY(100%);
+	opacity: 0;
+	transition: transform 0.35s ease, opacity 0.35s ease;
+	pointer-events: none;
+
+	&--visible {
+		transform: translateY(0);
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	&__text {
+		flex: 1 1 280px;
+		line-height: 1.6;
+		opacity: 0.85;
+		margin: 0;
+
+		a {
+			font-weight: 700;
+			text-decoration: underline;
+			text-underline-offset: 3px;
+
+			&:hover { color: $blue; }
+		}
+	}
+
+	&__actions {
+		display: flex;
+		gap: 0.75rem;
+		flex-shrink: 0;
+	}
+
+	&__btn {
+		font-family: 'Montserrat', Arial, sans-serif;
+		font-size: 0.85rem;
+		font-weight: 700;
+		letter-spacing: 0.05em;
+		padding: 0.5rem 1.25rem;
+		border: 2px solid $green;
+		cursor: pointer;
+		transition: background-color 0.2s ease, color 0.2s ease;
+
+		&--accept {
+			background-color: $green;
+			color: #fff;
+
+			&:hover {
+				background-color: $blue;
+				border-color: $blue;
+			}
+		}
+
+		&--decline {
+			background-color: var(--cb-decline);
+			color: var(--cb-color);
+			border-color: transparent;
+
+			&:hover {
+				border-color: $green;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.cookie-banner {
+		padding: 1rem 6vw 1.25rem;
+		flex-direction: column;
+		align-items: flex-start;
+
+		&__actions {
+			width: 100%;
+
+			.cookie-banner__btn {
+				flex: 1;
+				text-align: center;
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 1024px){
 	.section{
 		&--intro{
