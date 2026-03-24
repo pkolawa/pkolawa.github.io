@@ -11,14 +11,7 @@ body{
 	font-size: 14px;
 	margin: 0;
 	padding: 0;
-	// background: $gray;
 	position: relative;
-}
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4{
-	// letter-spacing: 0.15em;
 }
 h1, .h1{
 	font-weight: 700;
@@ -41,19 +34,6 @@ p{
 	margin: 0;
 }
 
-.wrapper{
-	width: 90%;
-	max-width: 1200px;
-	margin: 0 auto;
-}
-
-.italics{
-	font-style: italic;
-}
-.underline{
-	text-decoration: underline;
-}
-
 .flex{
 	&--wrapper{
 		display: flex;
@@ -68,7 +48,6 @@ p{
 		align-self: flex-end;
 	}
 }
-
 
 :link,
 :active,
@@ -90,19 +69,17 @@ section{
 	padding: 10vh 10vh;
 	position: relative;
 }
+
 @keyframes shake {
 	10%, 90% {
 	  transform: translate3d(-1px, 0, 0);
 	}
-	
 	20%, 80% {
 	  transform: translate3d(2px, 0, 0);
 	}
-  
 	30%, 50%, 70% {
 	  transform: translate3d(-4px, 0, 0);
 	}
-  
 	40%, 60% {
 	  transform: translate3d(4px, 0, 0);
 	}
@@ -110,7 +87,6 @@ section{
 
 .section{
 	&--intro{
-		// color: #fff;
 		padding: 15vh 10vh;
 		position: relative;
 
@@ -122,7 +98,6 @@ section{
 			background-position: center center;
 			background-repeat: no-repeat;
 			background-size: cover;
-			// box-shadow: inset 0 20vw 60vh rgba($blue, 0.5), inset 0 -40vh 60vh rgba($green, 0.5);
 			z-index: 10;
 		}
 
@@ -151,16 +126,6 @@ section{
 			opacity: 0.5;
 			cursor: pointer;
 		}
-		.intro__video{
-			position: fixed;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			z-index: -1;
-			opacity: 0.3;
-		}
 	}
 
 	&--fields {
@@ -168,27 +133,6 @@ section{
 	}
 	&--fields:nth-of-type(2) {
 		padding-top: 25vh;
-	}
-
-	&--coverLetter {
-		.coverLetter__miniature {
-			width: 40%;
-			margin: 20px 0;
-			box-shadow: 0 0 5px rgba(0,0,0, 0.6);
-			transition: 0.5s ease-in-out;
-
-			&.expanded {
-				width: 80%;
-				margin: 30px auto;
-				transition: 0.5s ease-in-out;
-			}
-
-			&:hover{
-				cursor: pointer;
-				box-shadow: 0 0 10px rgba(0,0,0, 0.8);
-				transition: 0.5s linear;
-			}
-		}
 	}
 
 	&--lists{
@@ -207,7 +151,7 @@ section{
 		font-size: 3rem;
 		position: relative;
 		margin-bottom: 20px;
-		
+
 		&:after{
 			content: '';
 			display: block;
@@ -239,17 +183,6 @@ section{
 		letter-spacing: 0;
 	}
 	&__overview-description{
-		
-	}
-	&__overview-expander{
-		border: 3px solid $black;
-		font-weight: 700;
-		font-size: 1rem;
-		background: none;
-		padding: 0.5ex 1ex;
-		position: absolute;
-		bottom: 0;
-		right: 0;
 	}
 }
 
@@ -429,28 +362,6 @@ section{
 	}
 }
 
-@media only screen and (max-width: 640px) {
-	.site-footer {
-		&__body {
-			padding: 3rem 6vw 2rem;
-			gap: 2rem;
-		}
-
-		&__brand {
-			flex-basis: 100%;
-		}
-
-		&__tagline {
-			max-width: 100%;
-		}
-
-		&__bottom {
-			padding: 1.2rem 6vw;
-		}
-	}
-}
-
-
 .cookie-banner {
 	--cb-bg:      #{$black};
 	--cb-color:   #{$gray};
@@ -544,40 +455,16 @@ section{
 	}
 }
 
-@media only screen and (max-width: 640px) {
-	.cookie-banner {
-		padding: 1rem 6vw 1.25rem;
-		flex-direction: column;
-		align-items: flex-start;
-
-		&__actions {
-			width: 100%;
-
-			.cookie-banner__btn {
-				flex: 1;
-				text-align: center;
-			}
-		}
-	}
-}
-
 @media only screen and (max-width: 1024px){
 	.section{
 		&--intro{
 			.intro__logo{
 				width: 80%;
 			}
-			.intro__video{
-				height: 100%;
-				width: auto;
-				margin-left: -50%;
-			}
 		}
 	}
 
 	.flex{
-		&--wrapper{
-		}
 		&--item{
 			flex-basis: 55%;
 		}
@@ -592,10 +479,9 @@ section{
 	}
 }
 
-
 @media only screen and (max-width: 640px){
 	$mobile_section_padding: 2vh;
-	
+
 	section{
 		padding: $mobile_section_padding $mobile_section_padding $mobile_section_padding*2 $mobile_section_padding;
 	}
@@ -615,18 +501,14 @@ section{
 				font-size: 1rem;
 			}
 		}
-	}
 
-	.section{
 		&__title{
 			width: 80%;
 			margin: 0 auto;
 		}
 	}
-	
+
 	.flex{
-		&--wrapper{
-		}
 		&--item{
 			flex-basis: 70%;
 		}
@@ -663,6 +545,37 @@ section{
 		}
 	}
 
-	footer{
+	.site-footer {
+		&__body {
+			padding: 3rem 6vw 2rem;
+			gap: 2rem;
+		}
+
+		&__brand {
+			flex-basis: 100%;
+		}
+
+		&__tagline {
+			max-width: 100%;
+		}
+
+		&__bottom {
+			padding: 1.2rem 6vw;
+		}
+	}
+
+	.cookie-banner {
+		padding: 1rem 6vw 1.25rem;
+		flex-direction: column;
+		align-items: flex-start;
+
+		&__actions {
+			width: 100%;
+
+			.cookie-banner__btn {
+				flex: 1;
+				text-align: center;
+			}
+		}
 	}
 }
