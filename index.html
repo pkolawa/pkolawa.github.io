@@ -337,7 +337,6 @@
 				});
 
 				document.getElementById('cookie-decline').addEventListener('click', function() {
-					try { localStorage.setItem('cookie_consent', 'denied'); } catch(e) {}
 					banner.classList.remove('cookie-banner--visible');
 				});
 			})();
