@@ -107,7 +107,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section--fields">
+		<section id="how-i-help" class="section--fields">
 			<p class="section__title">How I help teams</p>
 			<div class="section__contentWrapper flex--wrapper">
 				<div class="field__overview-container flex--item">
@@ -135,7 +135,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section--fields">
+		<section id="expertise" class="section--fields">
 			<p class="section__title">Core expertise</p>
 			<div class="section__contentWrapper flex--wrapper">
 				<div class="field__overview-container flex--item">
@@ -156,7 +156,7 @@
 				</div>
 			</div>
 		</section>
-		<section class="section--fields">
+		<section id="connect" class="section--fields">
 			<p class="section__title">Connect with me</p>
 			<div class="section__contentWrapper flex--wrapper">
 				<div class="field__overview-container flex--item">
@@ -191,7 +191,7 @@
 				<img src="./assets/img/Cover_Letter_EN.jpg" loading="lazy" class="coverLetter__miniature js-clickToExpand" alt="" />
 			</div>
 		</section> -->
-		<section class="section--lists">
+		<section id="open-source" class="section--lists">
 			<p class="section__title">Open-source highlights</p>
 			<div class="section__contentWrapper">
 				<div id="field--all" class="fieldDetails__wrapper">
@@ -242,8 +242,35 @@
 			</div>
 		</section>
 	</main>
-	<footer>
-		<p id="footerCopyrightsParagraph">Copyrights © 2026 - <a href="https://pkolawa.pl">Piotr Kolawa</a></p>
+	<footer class="site-footer">
+		<div class="site-footer__body">
+			<div class="site-footer__brand">
+				<p class="site-footer__name">Piotr Kolawa</p>
+				<p class="site-footer__tagline">Engineering manager and developer building resilient digital products.</p>
+				<a href="#" class="site-footer__back-to-top" aria-label="Back to top">↑ Back to top</a>
+			</div>
+			<nav class="site-footer__nav" aria-label="Page sections">
+				<p class="site-footer__nav-title">Explore</p>
+				<ul class="site-footer__nav-list">
+					<li><a href="#how-i-help">How I help teams</a></li>
+					<li><a href="#expertise">Core expertise</a></li>
+					<li><a href="#connect">Connect with me</a></li>
+					<li><a href="#open-source">Open-source highlights</a></li>
+				</ul>
+			</nav>
+			<div class="site-footer__social">
+				<p class="site-footer__nav-title">Find me on</p>
+				<ul class="site-footer__nav-list">
+					<li><a href="https://pkolawa.medium.com" target="_blank" rel="noopener noreferrer">Medium</a></li>
+					<li><a href="https://linkedin.com/in/pkolawa" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+					<li><a href="https://github.com/pkolawa" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+					<li><a href="https://stackoverflow.com/users/6103808/pkolawa" target="_blank" rel="noopener noreferrer">Stack Overflow</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="site-footer__bottom">
+			<p id="footerCopyrightsParagraph">© 2026 <a href="https://pkolawa.pl">Piotr Kolawa</a>. All rights reserved.</p>
+		</div>
 	</footer>
 	<script>
 		(function() {
@@ -257,6 +284,19 @@
 
 			document.querySelector('.intro__button').addEventListener('click', function() {
 				document.querySelector('.section--fields').scrollIntoView({ behavior: 'smooth' });
+			});
+
+			document.querySelectorAll('.site-footer a[href^="#"]').forEach(function(link) {
+				link.addEventListener('click', function(e) {
+					e.preventDefault();
+					const target = this.getAttribute('href');
+					if (target === '#') {
+						window.scrollTo({ top: 0, behavior: 'smooth' });
+					} else {
+						const section = document.querySelector(target);
+						if (section) section.scrollIntoView({ behavior: 'smooth' });
+					}
+				});
 			});
 		})();
 	</script>

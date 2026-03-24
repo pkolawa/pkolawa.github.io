@@ -306,14 +306,147 @@ section{
 	}
 }
 
-footer{
-	padding: 5px 0;
-	height: 1.5rem;
-	color: #aaa;
+.site-footer {
+	// Light theme (default)
+	--footer-bg:          #ffffff;
+	--footer-body-border: rgba(#{$black}, 0.1);
+	--footer-color:       #{$black};
+	--footer-name-color:  #{$black};
+	--footer-bottom-bg:   #{$gray};
 
-	p{
-		text-align: center;
+	@media (prefers-color-scheme: dark) {
+		--footer-bg:          #{$black};
+		--footer-body-border: rgba(#{$gray}, 0.1);
+		--footer-color:       #{$gray};
+		--footer-name-color:  #ffffff;
+		--footer-bottom-bg:   rgba(0, 0, 0, 0.3);
+	}
+
+	background-color: var(--footer-bg);
+	color: var(--footer-color);
+	font-size: 0.9rem;
+
+	&__body {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 3rem;
+		padding: 5rem 8vw 3rem;
+		border-top: 3px solid var(--footer-bottom-bg);
+	}
+
+	&__brand {
+		flex: 1 1 240px;
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+
+	&__name {
+		font-size: 1.4rem;
+		font-weight: 900;
+		letter-spacing: 0.15em;
+		text-transform: uppercase;
+		color: var(--footer-name-color);
+		margin: 0;
+	}
+
+	&__tagline {
 		opacity: 0.6;
+		line-height: 1.6;
+		max-width: 280px;
+		margin: 0;
+	}
+
+	&__back-to-top {
+		display: inline-block;
+		margin-top: auto;
+		padding-top: 1rem;
+		font-weight: 700;
+		text-decoration: none;
+		color: $green;
+		letter-spacing: 0.05em;
+
+		&:hover {
+			color: $blue;
+		}
+	}
+
+	&__nav,
+	&__social {
+		flex: 0 1 160px;
+	}
+
+	&__nav-title {
+		font-weight: 900;
+		font-size: 0.75rem;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		color: $green;
+		margin: 0 0 1.2rem;
+	}
+
+	&__nav-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+
+		a {
+			text-decoration: none;
+			opacity: 0.7;
+			transition: opacity 0.2s ease, color 0.2s ease;
+
+			&:hover {
+				opacity: 1;
+				color: $blue;
+			}
+		}
+	}
+
+	&__bottom {
+		padding: 1.5rem 8vw;
+		background-color: var(--footer-bottom-bg);
+
+		p {
+			margin: 0;
+			opacity: 0.5;
+			font-size: 0.8rem;
+
+			a {
+				font-weight: 700;
+				text-decoration: none;
+
+				&:hover {
+					opacity: 1;
+					color: $green;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 640px) {
+	.site-footer {
+		&__body {
+			padding: 3rem 6vw 2rem;
+			gap: 2rem;
+		}
+
+		&__brand {
+			flex-basis: 100%;
+		}
+
+		&__tagline {
+			max-width: 100%;
+		}
+
+		&__bottom {
+			padding: 1.2rem 6vw;
+		}
 	}
 }
 
