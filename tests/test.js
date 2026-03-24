@@ -33,7 +33,7 @@ describe('Head metadata', function () {
 
   it('links to favicon and main stylesheet', function () {
     const iconHref = $('link[rel~="icon"]').attr('href');
-    const stylesheetHref = $('link[rel~="stylesheet"]').attr('href');
+    const stylesheetHref = $('link[rel~="stylesheet"][href*="assets/css"]').attr('href');
 
     assert.strictEqual(iconHref, './favicon.ico');
     assert.strictEqual(stylesheetHref, './assets/css/main.css');

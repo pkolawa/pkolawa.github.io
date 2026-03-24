@@ -59,6 +59,7 @@
     background-repeat: repeat no-repeat;
     background-position: 0 bottom;
 	transform-origin: center bottom;
+	will-change: transform;
 }
 .rotated .pkolawaWaves {
 	right: 0;

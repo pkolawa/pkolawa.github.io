@@ -1,10 +1,10 @@
+@use 'mixins' as *;
+@use 'pkolawaWaves';
 
 $green: #57c177;
 $gray: #fafafa;
 $blue: #28abef;
 $black: #252525;
-
-@import "mixins";
 
 body{
 	font-family: 'Montserrat', Arial, sans-serif;
@@ -107,7 +107,6 @@ section{
 	  transform: translate3d(4px, 0, 0);
 	}
 }
-@import '_pkolawaWaves';
 
 .section{
 	&--intro{
@@ -146,11 +145,11 @@ section{
 			left: 50%;
 			transform: translateX(-50%);
 			margin: 0 auto;
-			font-size: 1rem;
 			padding: 0.5rem 1.5rem;
 			z-index: 10;
 			font-size: 1.2rem;
 			opacity: 0.5;
+			cursor: pointer;
 		}
 		.intro__video{
 			position: fixed;
@@ -310,13 +309,6 @@ section{
 footer{
 	padding: 5px 0;
 	height: 1.5rem;
-
-	//TODO: TO BE REMOVED AFTER FULL DEPLOY
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	background-color: transparent;
 	color: #aaa;
 
 	p{
