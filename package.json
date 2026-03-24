@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.html",
   "scripts": {
+    "posttest": "node scripts/update-sitemap.js",
     "test": "mocha tests/test.js",
     "build": "sass ./assets/scss/main.scss ./assets/css/main.css --style compressed"
   },
