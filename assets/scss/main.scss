@@ -18,7 +18,7 @@ h1, .h1,
 h2, .h2,
 h3, .h3,
 h4, .h4{
-	letter-spacing: 0.15em;
+	// letter-spacing: 0.15em;
 }
 h1, .h1{
 	font-weight: 700;
@@ -219,10 +219,10 @@ section{
 			background-blend-mode: darken;
 		}
 
-		&:nth-of-type(2n+1):after{
+		section:nth-child(odd) &:after{
 			background-color: $blue;
 		}
-		&:nth-of-type(2n):after{
+		section:nth-child(even) &:after{
 			background-color: $green;
 		}
 	}
