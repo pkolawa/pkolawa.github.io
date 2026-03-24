@@ -45,6 +45,11 @@
 	<link rel="icon" type="image/x-icon" href="./favicon.ico">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
+	<link rel="preload" as="image" href="./assets/img/pk_color.webp" type="image/webp">
+	<link rel="preload" as="image" href="./assets/img/pkolawaWaves-top.webp" type="image/webp">
+	<link rel="preload" as="image" href="./assets/img/pkolawaWaves-mid.webp" type="image/webp">
+	<link rel="preload" as="image" href="./assets/img/pkolawaWaves-bot.webp" type="image/webp">
 	<link href="./assets/css/main.css" rel="stylesheet" type="text/css"/>
 
 	<script type="application/ld+json">
@@ -243,12 +248,16 @@
 	<script>
 		(function() {
 			const expandableElements = document.getElementsByClassName('js-clickToExpand');
-			
+
 			for(var i = 0; i < expandableElements.length; i++){
 				expandableElements[i].addEventListener('click', (e) => {
 					e.target.classList.toggle('expanded');
 				});
 			}
+
+			document.querySelector('.intro__button').addEventListener('click', function() {
+				document.querySelector('.section--fields').scrollIntoView({ behavior: 'smooth' });
+			});
 		})();
 	</script>
 </body>
