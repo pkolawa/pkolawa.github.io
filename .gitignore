@@ -33,6 +33,9 @@ yarn-error.log*
 *.orig
 *.tmp
 
+# IDE settings
+.vscode/
+
 # Claude Code — local settings (personal, not shared)
 .claude
 
