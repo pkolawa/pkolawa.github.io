@@ -40,12 +40,11 @@ p{
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-around;
-		align-items: center;
-		align-content: center;
+		align-items: stretch;
+		gap: 4rem;
 	}
 	&--item{
-		flex: 0 1 25%;
-		align-self: flex-end;
+		flex: 0 1 calc(20% - 2rem);
 		box-sizing: border-box;
 	}
 }
@@ -151,7 +150,7 @@ section{
 		font-weight: 700;
 		font-size: 3rem;
 		position: relative;
-		margin-bottom: 20px;
+		margin-bottom: 80px;
 
 		&:after{
 			content: '';
@@ -467,8 +466,7 @@ section{
 
 	.flex{
 		&--item{
-			flex-basis: 55%;
-			max-width: 50%;
+			flex: 0 1 calc(50% - 2rem);
 		}
 	}
 	.fieldDetails{
@@ -512,8 +510,7 @@ section{
 
 	.flex{
 		&--item{
-			flex-basis: 70%;
-			max-width: 100%;
+			flex: 1 1 100%;
 		}
 	}
 
