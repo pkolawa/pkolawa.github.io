@@ -135,8 +135,8 @@ describe('My projects section', function () {
   const projectsSection = $('.section--fields').eq(2);
   const projectItems = projectsSection.find('.field__overview-container');
 
-  it('lists six project cards', function () {
-    assert.strictEqual(projectItems.length, 6, 'Expected six project cards');
+  it('lists seven project cards', function () {
+    assert.strictEqual(projectItems.length, 7, 'Expected seven project cards');
   });
 
   it('names the published projects', function () {
@@ -147,7 +147,7 @@ describe('My projects section', function () {
 
     assert.deepStrictEqual(
       titles,
-      ['Pulsing Feed', 'Jest Mgła', 'Poland KRS MCP Server', 'Polish Parliament MCP Server', 'Watcha'],
+      ['Pulsing Feed', 'Jest Mgła', 'Poland KRS MCP Server', 'Polish Parliament MCP Server', 'Hubilado', 'Watcha', 'Jebać PiS - educational campaign'],
       'Unexpected project titles'
     );
   });
