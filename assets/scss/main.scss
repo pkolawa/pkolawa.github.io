@@ -62,12 +62,12 @@ p{
 		flex-direction: row;
 		flex-wrap: wrap;
 		justify-content: space-around;
-		align-items: center;
-		align-content: center;
+		align-items: stretch;
+		gap: 4rem;
 	}
 	&--item{
-		flex-basis: 200px;
-		align-self: flex-end;
+		flex: 0 1 calc(20% - 2rem);
+		box-sizing: border-box;
 	}
 }
 
@@ -299,7 +299,8 @@ section{
 		font-weight: 700;
 		font-size: 3rem;
 		position: relative;
-		
+		margin-bottom: 80px;
+
 		&:after{
 			content: '';
 			display: block;
@@ -324,9 +325,10 @@ section{
 	&__overview-container{
 		padding-bottom: 3em;
 		position: relative;
+		margin-bottom: 40px;
 	}
 	&__overview-name{
-		font-weight: 700;
+		letter-spacing: 0;
 	}
 	&__overview-description{
 		
@@ -374,7 +376,7 @@ section{
 		}
 	}
 	&__repo-name{
-		font-weight: 700;
+		letter-spacing: 0;
 	}
 	&__repo-desc{
 		text-align: justify;
@@ -430,9 +432,8 @@ footer{
 	}
 
 	.flex{
-		&--wrapper{
-		}
 		&--item{
+			flex: 0 1 calc(50% - 2rem);
 		}
 	}
 	.fieldDetails{
@@ -481,10 +482,8 @@ footer{
 	}
 	
 	.flex{
-		&--wrapper{
-		}
 		&--item{
-			flex-basis: 70%;
+			flex: 1 1 100%;
 		}
 	}
 
