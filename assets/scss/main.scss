@@ -44,8 +44,7 @@ p{
 		align-content: center;
 	}
 	&--item{
-		flex-basis: 300px;
-		max-width: 25%;
+		flex: 0 1 25%;
 		align-self: flex-end;
 		box-sizing: border-box;
 	}
