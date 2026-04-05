@@ -44,8 +44,10 @@ p{
 		align-content: center;
 	}
 	&--item{
-		flex-basis: 200px;
+		flex-basis: 300px;
+		max-width: 25%;
 		align-self: flex-end;
+		box-sizing: border-box;
 	}
 }
 
@@ -467,6 +469,7 @@ section{
 	.flex{
 		&--item{
 			flex-basis: 55%;
+			max-width: 50%;
 		}
 	}
 	.fieldDetails{
@@ -511,6 +514,7 @@ section{
 	.flex{
 		&--item{
 			flex-basis: 70%;
+			max-width: 100%;
 		}
 	}
 
