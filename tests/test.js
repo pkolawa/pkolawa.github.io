@@ -50,7 +50,7 @@ describe('Page structure', function () {
   it('renders all top-level sections inside the main element', function () {
     const main = $('main');
     assert.strictEqual(main.find('section.section--intro').length, 1, 'Expected a single intro section');
-    assert.strictEqual(main.find('section.section--fields').length, 3, 'Expected three field-focused sections');
+    assert.strictEqual(main.find('section.section--fields').length, 4, 'Expected four field-focused sections');
     assert.strictEqual(main.find('section.section--lists').length, 1, 'Expected a repositories section');
   });
 });
@@ -131,8 +131,35 @@ describe('Core expertise section', function () {
   });
 });
 
+describe('My projects section', function () {
+  const projectsSection = $('.section--fields').eq(2);
+  const projectItems = projectsSection.find('.field__overview-container');
+
+  it('lists six project cards', function () {
+    assert.strictEqual(projectItems.length, 6, 'Expected six project cards');
+  });
+
+  it('names the published projects', function () {
+    const titles = projectItems
+      .map((_, item) => $(item).find('.field__overview-name').text().trim())
+      .get()
+      .filter(function (t) { return t.length > 0; });
+
+    assert.deepStrictEqual(
+      titles,
+      ['Pulsing Feed', 'Jest Mgła', 'Poland KRS MCP Server', 'Polish Parliament MCP Server', 'Watcha'],
+      'Unexpected project titles'
+    );
+  });
+
+  it('includes a call-to-action link for featured projects', function () {
+    const links = projectItems.find('.fieldDetails__repo-link');
+    assert.ok(links.length >= 5, 'Expected at least five project links');
+  });
+});
+
 describe('Connect with me section', function () {
-  const connectSection = $('.section--fields').eq(2);
+  const connectSection = $('.section--fields').eq(3);
   const connectItems = connectSection.find('.field__overview-container');
 
   it('promotes four external profiles', function () {
