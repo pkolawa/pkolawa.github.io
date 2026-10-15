@@ -5,10 +5,10 @@
 
 ## Krytyczne
 
-- [ ] Naprawić failujący test `highlights exactly three fields` — nadać sekcji „My projects" ([index.html:93](index.html#L93)) odrębną klasę zamiast współdzielonej `section--fields` i zawęzić selektor w [tests/test.js:57](tests/test.js#L57)
+- [ ] Naprawić failujący test `highlights exactly three fields` — nadać sekcji „My projects" ([index.html:93](index.html#L93)) odrębną klasę zamiast współdzielonej `section--fields` i zawęzić selektor w [tests/test.js:63](tests/test.js#L63) (test znajduje 10 elementów zamiast 3; dopóki failuje, na `master` nie da się zielono przejść `npm test`)
 - [ ] Uzupełnić docelowe URL-e albo usunąć linki `href="#"` w 5 kartach projektów ([index.html:100](index.html#L100), [:106](index.html#L106), [:112](index.html#L112), [:118](index.html#L118), [:130](index.html#L130)) — obecnie otwierają pustą kartę przez `target="_blank"`
 - [ ] Zastąpić [.travis.yml](.travis.yml) (Node 6.10, EOL) workflowem `.github/workflows/ci.yml` — Node 20, `npm ci` + `npm test` na push i pull request
-- [ ] Uruchomić `npm audit fix` — 5 podatności w zależnościach deweloperskich (`undici` high, `tar` moderate)
+- [x] Uruchomić `npm audit fix` — 5 podatności w zależnościach deweloperskich (`undici` high, `tar` moderate) — zrobione przez bumpy Dependabota, `npm audit` czysty (2026-10-11)
 
 ## Ważne
 
@@ -16,8 +16,8 @@
 - [ ] Usunąć martwy [gruntfile.js](gruntfile.js) — ładuje `grunt-contrib-uglify`, `grunt-contrib-watch` i `grunt-sass`, których nie ma w [package.json](package.json) ani w `node_modules`
 - [ ] Usunąć pliki-śmieci: [dev](dev) (zacommitowany output błędu grunta), pusty [deploy.sh](deploy.sh), puste `assets/js/main.js` i `assets/js/test.js`, osierocone `assets/js/main.js.map`, pusty katalog `seocontent/`
 - [ ] Wykonać `git rm --cached` na śledzonych `.DS_Store` w katalogu głównym, `assets/` i `assets/img/` — są w [.gitignore](.gitignore), ale nadal w indeksie
-- [ ] Zsynchronizować [README.md](README.md) ze stanem gałęzi `master` — sekcje „Tech stack" i „Project structure" opisują `scripts/update-sitemap.js`, `403.html`, `404.html`, `sitemap.xml`, `robots.txt`, `_pkolawaWaves.scss` i GA4, których na `master` nie ma; brak też wzmianki o sekcji „My projects"
-- [ ] Przenieść z gałęzi `pkolawa_pl` do [index.html](index.html): `<link rel="canonical">`, meta Twitter Card, JSON-LD (Person / WebSite / ProfilePage), `<meta name="robots">`; dodać `robots.txt` i `sitemap.xml`
+- [ ] Zsynchronizować [README.md](README.md) ze stanem gałęzi `master` — sekcje „Tech stack" i „Project structure" opisują stan gałęzi `pkolawa_pl`: `scripts/update-sitemap.js`, `403.html`, `404.html`, `sitemap.xml`, `robots.txt`, `_pkolawaWaves.scss` i GA4, których na `master` nie ma; brak też wzmianki o sekcji „My projects"
+- [ ] Przenieść z gałęzi `pkolawa_pl` do [index.html](index.html): `<link rel="canonical">`, meta Twitter Card, JSON-LD (Person / WebSite / ProfilePage), `<meta name="robots">`; dodać `robots.txt` i `sitemap.xml` oraz `scripts/update-sitemap.js` z hookiem `posttest` (automatyczna aktualizacja `lastmod`/`dateModified`) — wymaga najpierw naprawy failującego testu
 - [ ] Poprawić literówki w [index.html](index.html): „loose"→„lose" i „morend" ([:19](index.html#L19), [:29](index.html#L29) — meta OG, indeksowane), „wokring"/„substract" ([:78](index.html#L78)), „frineds"/„tha't" ([:165](index.html#L165))
 - [ ] Uzupełnić puste `alt=""` na 7 miniaturach w sekcji „Forked & created repos" ([index.html:146-181](index.html#L146-L181))
 - [ ] Dodać do CI krok `npm run build` + `git diff --exit-code assets/css/main.css` — wykryje rozjazd zacommitowanego CSS ze źródłem SCSS
